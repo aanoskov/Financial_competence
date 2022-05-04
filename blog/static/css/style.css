@@ -1,0 +1,169 @@
+@font-face {
+    font-family: "PoiretOne-Regular"; /* Гарнитура шрифта */
+    src: url("PoiretOne-Regular.ttf"); /* Путь к файлу со шрифтом */
+}
+@font-face {
+    font-family: "YanoneKaffeesatz"; /* Гарнитура шрифта */
+    src: url("YanoneKaffeesatz-VariableFont_wght.ttf"); /* Путь к файлу со шрифтом */
+}
+body {
+    overflow: hidden;
+    width: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    font-family: 'Yanone Kaffeesatz',"PoiretOne-Regular", Arial, sans-serif;
+    font-size: 16px;
+    background: rgb(254,254,254);
+    background: radial-gradient(circle, rgba(254,254,254,1) 0%, rgba(217,241,255,1) 85%, rgba(217,241,255,1) 100%);
+}
+
+
+.main-header h3{
+    overflow: hidden;
+    font-family: "PoiretOne-Regular";
+    font-weight: 600;
+    color: #611400;
+    font-size: 45px;
+    margin-bottom: 10px;
+    
+
+}
+.main-header h1{
+    margin-top: 0px;
+    overflow: hidden;
+    font-family: "YanoneKaffeesatz";
+    font-weight: 600;
+    text-shadow: 6px 4px 0px #FF4C00;
+    color: #FFA400;
+    font-size: 130px;
+    
+}
+.main-header {
+    text-align: center;    
+    overflow: hidden;
+    padding-bottom : 0%;
+    padding-top: 5%;
+}
+
+.main-menu {
+    overflow: hidden;
+    text-align: center;    
+}
+
+.main-menu-list {
+    overflow: hidden;  
+    margin: 0;
+    padding: 0;
+    
+}
+.main-menu-list a{
+    text-decoration: none;
+}
+.main-menu-list li{
+    padding-top: 15px;
+    margin: 0; 
+    padding-bottom: 60px;
+    overflow: hidden;
+    text-decoration: none;
+}
+
+.main-menu-button{
+    background-color: #FFE5AC;
+    align-items: center;
+    appearance: none;
+    border: 0;
+    border-radius: 6px;
+    /*box-shadow: rgba(45, 35, 66, .4) 0 2px 4px,rgba(45, 35, 66, .3) 0 7px 13px -3px,rgba(58, 65, 111, .5) 0 -3px 0 inset;*/
+    box-shadow: #FF8B2D 0 2px 4px, #FF8B2D 0 7px 13px -3px,#FF8B2D 0 -3px 0 inset;
+    box-sizing: border-box;
+    color: #FF6500;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: "YanoneKaffeesatz";
+    height: 100px;
+    width: 420px;
+    justify-content: center;
+    
+    overflow: hidden;
+    padding-left: 16px;
+    padding-right: 16px;
+    position: relative;
+    text-align: left;
+    transition: box-shadow .15s,transform .15s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    will-change: box-shadow,transform;
+    font-size: 60px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.main-menu-button:focus {
+  box-shadow: #3c4fe0 0 0 0 1.5px inset, rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+}
+
+.main-menu-button:hover {
+  /*box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;*/
+  box-shadow: #FF6500 0 4px 8px, #FF6500 0 7px 13px -3px, #FF6500 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
+
+.main-menu-button:active {
+  box-shadow: #FF6500 0 3px 7px inset;
+  transform: translateY(2px);
+}
+
+.accept-button{
+    background-color: #FFE5AC;
+    align-items: center;
+    appearance: none;
+    border: 0;
+    border-radius:50%;
+    /*box-shadow: rgba(45, 35, 66, .4) 0 2px 4px,rgba(45, 35, 66, .3) 0 7px 13px -3px,rgba(58, 65, 111, .5) 0 -3px 0 inset;*/
+    box-shadow: #FF8B2D 0 2px 4px, #FF8B2D 0 7px 13px -3px,#FF8B2D 0 -3px -0 inset;
+    box-sizing: border-box;
+    color: #FF6500;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: "YanoneKaffeesatz";
+    height: 200px;
+    width: 200px;
+    justify-content: center;
+    
+    overflow: hidden;
+    padding-left: 16px;
+    padding-right: 16px;
+    position: relative;
+    text-align: left;
+    transition: box-shadow .15s,transform .15s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    will-change: box-shadow,transform;
+    font-size: 60px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.accept-button:focus {
+  box-shadow: #3c4fe0 0 0 0 1.5px inset, rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+}
+
+.accept-button:hover {
+  /*box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;*/
+  box-shadow: #FF6500 0 4px 8px, #FF6500 0 7px 13px -3px, #FF6500 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
+
+.accept-button:active {
+  box-shadow: #FF6500 0 3px 7px inset;
+  transform: translateY(2px);
+}
+
+
+
