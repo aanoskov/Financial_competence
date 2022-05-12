@@ -65,9 +65,10 @@ class Column:
         # count * price * (1 - discount)
         elif 'sale' in green_card:
             self.earnings += green_card['sale'][0] * green_card['sale'][1] * (1 - green_card['sale'][2]/100)
-        # total earnings - total price
+        # total earnings, price
         elif 'earnings' in green_card:
-            self.earnings += green_card['earnings'][0] - green_card['earnings'][1]
+            self.count = green_card['earnings'][0] / green_card['earnings'][1]
+            self.earnings += green_card['earnings'][0]
 
         # TODO :
         # growth/reducion of sales, tuple (bool, percents)
