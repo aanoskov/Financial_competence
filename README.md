@@ -5,3 +5,5 @@ Game-simulator for financial competence
 
 логин админа: admin
 пароль админа: password
+
+Для открытия приложения нужно в директории приложения написать команду : python manage.py runserver
