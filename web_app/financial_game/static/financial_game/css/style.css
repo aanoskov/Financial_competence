@@ -1,0 +1,752 @@
+@font-face {
+    font-family: "PoiretOne-Regular"; /* Гарнитура шрифта */
+    src: url("PoiretOne-Regular.ttf"); /* Путь к файлу со шрифтом */
+}
+@font-face {
+    font-family: "YanoneKaffeesatz"; /* Гарнитура шрифта */
+    src: url("YanoneKaffeesatz-VariableFont_wght.ttf"); /* Путь к файлу со шрифтом */
+}
+@font-face {
+    font-family: "RobotoFlex-Regular"; /* Гарнитура шрифта */
+    src: url("RobotoFlex-Regular.ttf"); /* Путь к файлу со шрифтом */
+}
+
+@font-face {
+    font-family: "Oswald-Regular"; /* Гарнитура шрифта */
+    src: url("Oswald-Regular.ttf"); /* Путь к файлу со шрифтом */
+}
+body {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    font-family: 'Yanone Kaffeesatz',"PoiretOne-Regular", Arial, sans-serif;
+    font-size: 16px;
+    background: rgb(254,254,254);
+    background: radial-gradient(circle, rgba(254,254,254,1) 0%, rgba(217,241,255,1) 85%, rgba(217,241,255,1) 100%);
+}
+
+
+.main-header h3{
+    overflow: hidden;
+    font-family: "PoiretOne-Regular";
+    font-weight: 600;
+    color: #611400;
+    font-size: 45px;
+    margin-bottom: 10px;
+    
+
+}
+.main-header h1{
+    margin-top: 0px;
+    overflow: hidden;
+    font-family: "YanoneKaffeesatz";
+    font-weight: 600;
+    text-shadow: 6px 4px 0px #FF4C00;
+    color: #FFA400;
+    font-size: 130px;
+    
+}
+.main-header {
+    text-align: center;    
+    overflow: hidden;
+    padding-bottom : 0%;
+    padding-top: 5%;
+}
+.main-menu {
+    overflow: hidden;
+    text-align: center;    
+}
+
+
+.main-menu-list {
+    overflow: hidden;  
+    margin: 0;
+    padding: 0;
+    
+}
+.main-menu-list a{
+    text-decoration: none;
+}
+.main-menu-list li{
+    padding-top: 15px;
+    margin: 0; 
+    padding-bottom: 60px;
+    overflow: hidden;
+    text-decoration: none;
+}
+
+.main-menu-button{
+    background-color: #FFE5AC;
+    align-items: center;
+    appearance: none;
+    border: 0;
+    border-radius: 6px;
+    /*box-shadow: rgba(45, 35, 66, .4) 0 2px 4px,rgba(45, 35, 66, .3) 0 7px 13px -3px,rgba(58, 65, 111, .5) 0 -3px 0 inset;*/
+    box-shadow: #FF8B2D 0 2px 4px, #FF8B2D 0 7px 13px -3px,#FF8B2D 0 -3px 0 inset;
+    box-sizing: border-box;
+    color: #FF6500;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: "YanoneKaffeesatz";
+    height: 100px;
+    width: 420px;
+    justify-content: center;
+    
+    overflow: hidden;
+    padding-left: 16px;
+    padding-right: 16px;
+    position: relative;
+    text-align: left;
+    transition: box-shadow .15s,transform .15s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    will-change: box-shadow,transform;
+    font-size: 60px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.main-menu-button:focus {
+  box-shadow: #3c4fe0 0 0 0 1.5px inset, rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+}
+
+.main-menu-button:hover {
+  /*box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;*/
+  box-shadow: #FF6500 0 4px 8px, #FF6500 0 7px 13px -3px, #FF6500 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
+
+.main-menu-button:active {
+  box-shadow: #FF6500 0 3px 7px inset;
+  transform: translateY(2px);
+}
+
+.accept-button{
+    
+    align-items: center;
+    appearance: none;
+    border: 0;
+    border-radius:50%;
+    /*box-shadow: rgba(45, 35, 66, .4) 0 2px 4px,rgba(45, 35, 66, .3) 0 7px 13px -3px,rgba(58, 65, 111, .5) 0 -3px 0 inset;*/
+    box-shadow: #98DA2D 0 2px 4px, #98DA2D 0 7px 13px -3px, #98DA2D 0 -3px -0 inset;
+    box-sizing: border-box;
+/*    color: #FF6500;*/
+    cursor: pointer;
+    display: inline-flex;
+    font-family: "YanoneKaffeesatz";
+    height: 200px;
+    width: 200px;
+    justify-content: center;
+    
+    overflow: hidden;
+    padding-left: 16px;
+    padding-right: 16px;
+    position: relative;
+    text-align: left;
+    transition: box-shadow .15s,transform .15s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    will-change: box-shadow,transform;
+    font-size: 60px;
+    font-weight: 600;
+    text-decoration: none;
+    background: url(../img/yes.svg) no-repeat center;
+    background-color: #EBFF6A;
+}
+
+.accept-button:focus {
+  box-shadow: #98DA2D 0 0 0 1.5px inset, rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #98DA2D 0 -3px 0 inset;
+}
+
+.accept-button:hover {
+  /*box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;*/
+  box-shadow: #98DA2D 0 4px 8px, #98DA2D 0 7px 13px -3px, #98DA2D 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
+
+.accept-button:active {
+  box-shadow: #98DA2D 0 3px 7px inset;
+  transform: translateY(2px);
+}
+
+
+
+.decline-button{
+    background-color: #FF8282;
+    align-items: center;
+    appearance: none;
+    border: 0;
+    border-radius:50%;
+    /*box-shadow: rgba(45, 35, 66, .4) 0 2px 4px,rgba(45, 35, 66, .3) 0 7px 13px -3px,rgba(58, 65, 111, .5) 0 -3px 0 inset;*/
+    box-shadow: #FF2D2D 0 2px 4px, #FF2D2D 0 7px 13px -3px,#FF2D2D 0 -3px -0 inset;
+    box-sizing: border-box;
+    
+    cursor: pointer;
+    display: inline-flex;
+    font-family: "YanoneKaffeesatz";
+    height: 200px;
+    width: 200px;
+    justify-content: center;
+    
+    overflow: hidden;
+    padding-left: 16px;
+    padding-right: 16px;
+    position: relative;
+    text-align: left;
+    transition: box-shadow .15s,transform .15s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    will-change: box-shadow,transform;
+    font-size: 60px;
+    font-weight: 600;
+    text-decoration: none;
+    background: url(../img/no.svg) no-repeat center;
+    background-color: #FF8282;
+    
+}
+
+.decline-button:focus {
+  box-shadow: #FF2D2D 0 0 0 1.5px inset, rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #FF2D2D 0 -3px 0 inset;
+}
+
+.decline-button:hover {
+  /*box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;*/
+  box-shadow: #FF2D2D 0 4px 8px, #FF2D2D 0 7px 13px -3px, #FF2D2D 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
+
+.decline-button:active {
+  box-shadow: #FF2D2D 0 3px 7px inset;
+  transform: translateY(2px);
+}
+
+
+
+
+
+.game-table {
+    width: 100%;
+    height: auto;
+    padding-top: 0px;
+    padding-bottom: 10%;
+    overflow: hidden;
+    text-align: center;   
+    
+    position: relative;
+    margin-bottom: 0%;
+    margin-top: -30px;
+    
+    
+}
+.game-table-list {
+    overflow: hidden;  
+    margin: 0;
+    padding: 0;
+    
+}
+.game-table-list a{
+    text-decoration: none;
+}
+.game-table-list li{
+    padding-top: 15px;
+    margin: 0; 
+    padding-bottom: 60px;
+    overflow: hidden;
+    text-decoration: none;
+}
+
+
+.income{
+    z-index: 100;
+    left: 10%;
+    position: absolute;
+    width: 384px;
+	height: 650px;
+	background-color: #F4FFF5;
+    top: 20%;
+    border-radius: 45px;
+    border-color: #33DF33;
+    border-style: solid;
+    border-width: 25px; 
+    box-shadow: 7px 5px 7px #002734;
+}
+.expense{
+    z-index: 100;
+    right: 10%;
+    position: absolute;
+    width: 384px;
+	height: 650px;
+	background-color: #F4FFF5;
+    top: 20%;
+    border-radius: 45px;
+    border-color: #3C65FF;
+    border-style: solid;
+    border-width: 25px;
+    box-shadow: 7px 5px 7px #00275A;
+    
+}
+
+.expense p{
+    font-size: 30px;
+    height: auto;
+    width: auto;
+    padding-top: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 20px;
+    overflow: hidden;
+    font-family: "RobotoFlex-Regular";
+    font-weight: 500;
+    color: black;
+    text-align: center;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    word-wrap: break-word;
+    
+}
+
+.income p{
+    font-size: 30px;
+    height: auto;
+    width: auto;
+    padding-top: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 20px;
+    overflow: hidden;
+    font-family: "RobotoFlex-Regular";
+    font-weight: 500;
+    color: black;
+    text-align: center;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    word-wrap: break-word;
+}
+
+.continue-button {
+    background-color: #FFF2E8;
+    color: #FF6500;
+    box-shadow: #FF8B2D 7px 2px 4px, #FF8B2D 0 7px 13px -3px,#FF8B2D 0 -3px 0 inset;
+    font-size: 70px;
+}
+
+.continue-button:focus {
+  box-shadow: #3c4fe0 0 0 0 1.5px inset, rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+}
+
+.continue-button:hover {
+  /*box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;*/
+  box-shadow: #FF6500 7px 4px 8px, #FF6500 0 7px 13px -3px, #FF6500 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
+
+.continue-button:active {
+  box-shadow: #FF6500 0 3px 7px inset;
+  transform: translateY(2px);
+}
+
+
+
+
+.main-status-bar{
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;  
+    margin-top: 0%;
+    width: 100%;
+    padding-top: 30px;
+    padding-bottom: 70px;
+    
+}
+
+.money-status{
+    
+    overflow-x: hidden;  
+    position: absolute;
+    width: 20%;
+    padding: 0px;
+    padding-top: 0;
+    right: 0px;
+    background-color: #FFF2E8;
+    color: #FF6500;
+    border-radius: 6px;
+    margin-right: 30px;
+    margin-bottom: 0;
+    box-shadow: #FF8B2D 8px 7px 3px;
+/*    background: url(../img/peppa.svg) no-repeat bottom 0% right 0%;*/
+    background-color: #FFF2E8;
+    
+}
+.money-status h2{
+    padding-top: 0px;
+    padding-left: 10px;
+    font-family: "YanoneKaffeesatz";
+    font-size: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    margin: 0;
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
+.money-status p{
+    font-family: "RobotoFlex-Regular";
+    margin-left: 10px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding: 0;
+    font-size: 45px;
+    font-weight: 700;
+    text-decoration: none;
+}
+.money-image{
+    position: relative;
+    width: 150px;
+    height: 140px;
+    background: url(../img/peppa.svg) no-repeat;
+    right: 4px;
+    bottom: 0px;
+    top: 10px;
+    background-size: 100%;
+    
+    
+}
+.month-status{
+    overflow-x: hidden;  
+    width: 12%;
+    margin: 0;
+    margin-left: 30px;
+    padding: 0;
+    background-color: #FFF2E8;
+    color: #FF6500;
+    border-radius: 6px;
+    box-shadow: #FF8B2D 8px 7px 3px;
+    height: 80px;
+    
+    
+}
+.month-status h2{
+    margin-top: 18px;
+    margin-left: 20px;
+    float: left;
+    font-family: "YanoneKaffeesatz";
+    font-size: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    margin-right: 30px;
+    margin-bottom: 5px;
+}
+.month-status p{
+    font-family: "RobotoFlex-Regular";
+    font-size: 45px;
+    font-weight: 700;
+    text-decoration: none;
+    margin-left: 0px; 
+    margin-top: 16px;
+    margin-bottom: 0px;
+    
+}
+
+
+
+
+
+.form{
+    width: 30%;
+    position: relative;
+    height: 60px;
+    overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 100px;
+    background: transparent;
+    padding-top: 40px;
+    margin-top: 50px;
+    
+}
+
+
+.form input{
+    font-family: "YanoneKaffeesatz";
+    font-weight: 600;
+    width: 100%;
+    height: 100%;
+    color: black;
+    padding-top: 15px;
+    border: none;
+    background: transparent;
+    font-size: 30px;
+    
+    
+    
+    
+    
+}
+.form label {
+    
+    font-family: "YanoneKaffeesatz";
+    font-weight: 600;
+    font-size: 30px;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    border-bottom: 2px solid #FFA400;
+    padding-bottom: 10px;
+    
+    
+}
+/*#FF6500*/
+.form label::after {
+    
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    border-bottom: 3px solid #FF6500;
+    transform: translateX(-100%);
+    transition: all 0.3s ease;
+    
+    
+    
+}
+
+.content-name {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    padding-bottom: 8px;
+    transition: all 0.3s ease;
+    
+    
+}
+.form input:focus {
+    outline: none;
+    margin-top: -10px;
+}
+.form input{
+    margin-top: -10px;
+}
+.form input:focus + .label-name .content-name,
+.form input:valid + .label-name .content-name {
+    transform: translateY(-150%);
+    font-size: 14px;
+    left: 0px;
+    color: #FF6500;
+/*    margin-top: -10px;*/
+    
+}
+.form input:focus + .label-name::after,
+.form input:valid + .label-name::after {
+    transform: translateX(0%);
+    padding: 20px;
+}
+
+.income-input-state{
+    z-index: 100;
+	background-color: #F4FFF5;
+    border-radius: 45px;
+    border-color: #33DF33;
+    border-style: solid;
+    border-width: 25px; 
+    box-shadow: 7px 5px 7px #002734;
+    float: left;
+    position: static;
+    margin-left: 30px;
+   
+}
+.expense-input-state{
+    z-index: 100;
+	background-color: #F4FFF5;
+    border-radius: 45px;
+    border-color: #3C65FF;
+    border-style: solid;
+    border-width: 25px;
+    box-shadow: 7px 5px 7px #00275A;
+    float: left;
+    position: static;
+    
+    margin-left: 50px;
+}
+
+
+.cards{
+    position: relative;
+    width: 100%;
+    height: 100%;   
+    margin-top: -60px;
+    display: inline-block;
+    
+    
+}
+.input-game-table{
+    height: 900px;
+    position: static;
+    float: left;
+    margin-left: 50px;
+    font-family: "RobotoFlex-Regular";
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.cards p{
+    font-size: 30px;
+    height: auto;
+    width: auto;
+    padding-top: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 20px;
+    overflow: hidden;
+    font-family: "RobotoFlex-Regular";
+    font-weight: 500;
+    color: black;
+    text-align: center;
+    margin: 0;
+    position: relative;
+    transform: translate(-50%, -50%);
+    word-wrap: break-word;
+}
+.body-table-input{
+    overflow: auto;
+}
+
+.after-month-table{
+    border-collapse: collapse;
+    margin: 25px 0;
+    z-index: 100;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    font-family: "RobotoFlex-Regular";
+    font-weight: 500;
+    font-size: 21px;
+   
+}
+
+.after-month-table thead tr {
+    
+    text-align: left;
+    background-color: #FFF2E8;
+    color: #FF6500;;
+}
+
+.after-month-table th,
+.after-month-table td {
+    padding: 12px 15px;
+    
+}
+
+.after-month-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.after-month-table tbody tr:nth-of-type(even) {
+    background-color: white;
+}
+
+.after-month-table tbody tr:last-of-type {
+    border-bottom: 2px solid #FF6500;
+}
+
+.after-month-table tbody tr.active-row {
+    font-weight: bold;
+    color: #009879;
+}
+.after-month-table{
+    border-collapse: collapse;
+    margin: 25px 0;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: "RobotoFlex-Regular";
+    font-weight: 500;
+    
+}
+.thead-td{
+    background-color: #ffffff;
+    color: black;
+}
+
+
+.after-month-table th{
+    color: #FF6500;
+    
+}
+
+.input-table-buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;  
+    margin-top: 0%;
+    width: 100%;
+    padding-top: 30px;
+    padding-bottom: 0px;
+    
+    margin-top: 800px;
+    
+}
+.checking{
+    margin-left: 50px;
+    
+}
+.continue-game{
+    margin-right: 50px;
+}
+.td-check{
+    text-align: center;
+}
+.td-check img{
+    max-width:40%;
+    height:auto;
+}
+.input-info{
+    padding: 30px;
+    outline: none;
+    border: 0;
+    width: 0;
+    height: 0;
+    padding: 0;
+}
+.input-info input{
+    font-family: "RobotoFlex-Regular";
+    font-weight: 500;
+    width: 100%;
+    outline: none;
+    border: 0;
+    background: transparent;
+    height: 40px;
+    margin: 0;
+    font-size: 21px;
+}
