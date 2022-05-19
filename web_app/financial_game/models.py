@@ -74,8 +74,10 @@ class table(models.Model):
     tech = models.IntegerField('Приобретение технологий',default=0)
     education = models.IntegerField('Обучение сотрудников',default=0)
     hospitality = models.IntegerField('Представительские расходы',default=0)
+    other_invest = models.IntegerField('Другие расходы',default=0)
     #sponsor
     funding = models.IntegerField('Финансирование',default=0)
+    grants = models.IntegerField('Гранты',default=0)
     own_funds = models.IntegerField('Собственные средства основателей',default=0)
     funds_receipt = models.IntegerField('Заёмные средства (поступления)',default=0)
     funds_refund  = models.IntegerField('Заёмные средства (возврат)',default=0)

@@ -10,15 +10,16 @@
 
   <body class="body-table-input">
 
-
+    <form method="post">
+        {% csrf_token %}
     <div class="main-status-bar">
       <div class="month-status">
         <h2>Месяц</h2>
-        <p>12</p>
+        <p>1</p>
       </div>
       <div class="money-status">
         <h2>Сумма </h2>
-        <p>123456789</p>
+        <p>10000</p>
       </div>
       <div class="money-image">
 <!--          <img src="../img/peppa.svg">-->
@@ -44,7 +45,7 @@
                 <thead>
                     <tr>
                         <th>Доходы (выручка)</th>
-                        <td class="input-info"><input id="test-inp" type="number" placeholder='0' /></td>
+                        <td class="input-info"><input id="test-inp" type="number" placeholder='0' name ="earnings" /></td>
                         <td>руб</td>
                         <td class="td-check"><img src="{% static 'financial_game/img/no.svg' %}"></td>
                     </tr>
@@ -53,14 +54,14 @@
                 <tbody>
                     <tr>
                         <td>Средняя цена  продукта</td>
-                        <td class="input-info"><input type="number" placeholder='0'/></td>
+                        <td class="input-info"><input type="number" placeholder='0' name ="price"/></td>
                         <td>руб</td>
                         <td class="td-check"><img src="{% static 'financial_game/img/no.svg' %}"></td>
 
                     </tr>
                     <tr>
                         <td>Количество продукта</td>
-                        <td class="input-info"><input type="number" placeholder='0'/></td>
+                        <td class="input-info"><input type="number" placeholder='0' name ="count"/></td>
                         <td>Шт</td>
                         <td class="td-check"><img src="{% static 'financial_game/img/no.svg' %}"></td>
 
@@ -69,7 +70,7 @@
                 <thead>
                     <tr>
                         <th>Текущие расходы всего</th>
-                        <td class="input-info"><input type="number" placeholder='0'/></td>
+                        <td class="input-info"><input type="number" placeholder='0' name ="current_costs" /></td>
                         <td>руб</td>
                         <td class="td-check"><img src="{% static 'financial_game/img/no.svg' %}"></td>
                     </tr>
@@ -77,43 +78,43 @@
                 <tbody>
                     <tr>
                         <td>Себестоимость продукции</td> 
-                        <td class="input-info"><input type="number" placeholder='0'/></td>
+                        <td class="input-info"><input type="number" placeholder='0' name ="cost_price"/></td>
                         <td>руб</td>
                         <td class="td-check"><img src="{% static 'financial_game/img/no.svg' %}"></td>
                     </tr>
                     <tr>
                         <td>Заработная плата сотрудников</td>
-                        <td class="input-info"><input type="number" placeholder='0'/></td>
+                        <td class="input-info"><input type="number" placeholder='0' name ="salary" /></td>
                         <td>руб</td>
                         <td class="td-check"><img src="{% static 'financial_game/img/no.svg' %}"></td>
                     </tr>
                     <tr>
                         <td>Начисления на заработную плату сотрудников</td>
-                        <td class="input-info"><input type="number" placeholder='0'/></td>
+                        <td class="input-info"><input type="number" placeholder='0' name ="salary_taxes" /></td>
                         <td>руб</td>
                         <td class="td-check"><img src="{% static 'financial_game/img/no.svg' %}"></td>
                     </tr>
                     <tr>
                         <td>Услуги сторонних организаций</td>
-                        <td class="input-info"><input type="number" placeholder='0'/></td>
+                        <td class="input-info"><input type="number" placeholder='0' name ="third_party" /></td>
                         <td>руб</td>
                         <td class="td-check"><img src="{% static 'financial_game/img/no.svg' %}"></td>
                     </tr>
                     <tr>
                         <td>Расходы на рекламу</td>
-                        <td class="input-info"><input type="number" placeholder='0'/></td>
+                        <td class="input-info"><input type="number" placeholder='0' name ="ads" /></td>
                         <td>руб</td>
                         <td class="td-check"><img src="{% static 'financial_game/img/no.svg' %}"></td>
                     </tr>
                     <tr>
                         <td>Аренда</td>
-                        <td class="input-info"><input type="number" placeholder='0'/></td>
+                        <td class="input-info"><input type="number" placeholder='0' name ="rent_pay" /></td>
                         <td>руб</td>
                         <td class="td-check"><img src="{% static 'financial_game/img/no.svg' %}"></td>
                     </tr>
                     <tr>
                         <td>Другие расходы</td>
-                        <td class="input-info"><input type="number" placeholder='0'/></td>
+                        <td class="input-info"><input type="number" placeholder='0' name ="other" /></td>
                         <td>руб</td>
                         <td class="td-check"><img src="{% static 'financial_game/img/no.svg' %}"></td>
                     </tr>
@@ -121,13 +122,13 @@
                 <tbody class="tbody-result">
                     <tr>
                         <td>Общая сумма налогов</td>
-                        <td class="input-info"><input type="number" placeholder='0'/></td>
+                        <td class="input-info"><input type="number" placeholder='0' name ="earning_taxes" /></td>
                         <td>руб</td>
                         <td class="td-check"><img src="{% static 'financial_game/img/no.svg' %}"></td>
                     </tr>
                     <tr>
                         <td>Финансовый результат</td>
-                        <td class="input-info"><input type="number" placeholder='0'/></td>
+                        <td class="input-info"><input type="number" placeholder='0' name ="fin_res" /></td>
                         <td>руб</td>
                         <td class="td-check"><img src="{% static 'financial_game/img/no.svg' %}"></td>
                     </tr>
@@ -136,7 +137,7 @@
                 <thead>
                     <tr>
                         <th>Текущие расходы всего</th>
-                        <td class="input-info"><input type="number" placeholder='0'/></td>
+                        <td class="input-info"><input type="number" placeholder='0' name ="investments" /></td>
                         <td>руб</td>
                         <td class="td-check"><img src="{% static 'financial_game/img/no.svg' %}"></td>
                     </tr>
@@ -144,37 +145,37 @@
                 <tbody>
                     <tr>
                         <td>Закупка оборудования</td> 
-                        <td class="input-info"><input type="number" placeholder='0'/></td>
+                        <td class="input-info"><input type="number" placeholder='0' name ="equip" /></td>
                         <td>руб</td>
                         <td class="td-check"><img src="{% static 'financial_game/img/no.svg' %}"></td>
                     </tr>
                     <tr>
                         <td>Проведение научных исследований</td>
-                        <td class="input-info"><input type="number" placeholder='0'/></td>
+                        <td class="input-info"><input type="number" placeholder='0' name ="research" /></td>
                         <td>руб</td>
                         <td class="td-check"><img src="{% static 'financial_game/img/no.svg' %}"></td>
                     </tr>
                     <tr>
                         <td>Приобретение технологий</td>
-                        <td class="input-info"><input type="number" placeholder='0'/></td>
+                        <td class="input-info"><input type="number" placeholder='0' name ="tech" /></td>
                         <td>руб</td>
                         <td class="td-check"><img src="{% static 'financial_game/img/no.svg' %}"></td>
                     </tr>
                     <tr>
                         <td>Обучение сотрудников</td>
-                        <td class="input-info"><input type="number" placeholder='0'/></td>
+                        <td class="input-info"><input type="number" placeholder='0' name ="education" /></td>
                         <td>руб</td>
                         <td class="td-check"><img src="{% static 'financial_game/img/no.svg' %}"></td>
                     </tr>
                     <tr>
                         <td>Представительские расходы</td>
-                        <td class="input-info"><input type="number" placeholder='0'/></td>
+                        <td class="input-info"><input type="number" placeholder='0' name ="hospitality" /></td>
                         <td>руб</td>
                         <td class="td-check"><img src="{% static 'financial_game/img/no.svg' %}"></td>
                     </tr>
                     <tr>
                         <td>Другие расходы</td>
-                        <td class="input-info"><input type="number" placeholder='0'/></td>
+                        <td class="input-info"><input type="number" placeholder='0' name ="other_invest" /></td>
                         <td>руб</td>
                         <td class="td-check"><img src="{% static 'financial_game/img/no.svg' %}"></td>
                     </tr>
@@ -182,7 +183,7 @@
                 <thead>
                     <tr>
                         <th>Финансирование</th>
-                        <td class="input-info"><input type="number" placeholder='0'/></td>
+                        <td class="input-info"><input type="number" placeholder='0' name ="funding"/></td>
                         <td>руб</td>
                         <td class="td-check"><img src="{% static 'financial_game/img/no.svg' %}"></td>
                     </tr>
@@ -190,31 +191,31 @@
                 <tbody>
                     <tr>
                         <td>Получение грантов</td> 
-                        <td class="input-info"><input type="number" placeholder='0'/></td>
+                        <td class="input-info"><input type="number" placeholder='0' name ="grants" /></td>
                         <td>руб</td>
                         <td class="td-check"><img src="{% static 'financial_game/img/no.svg' %}"></td>
                     </tr>
                     <tr>
                         <td>Собственные средства основателей</td>
-                        <td class="input-info"><input type="number" placeholder='0'/></td>
+                        <td class="input-info"><input type="number" placeholder='0' name ="own_funds" /></td>
                         <td>руб</td>
                         <td class="td-check"><img src="{% static 'financial_game/img/no.svg' %}"></td>
                     </tr>
                     <tr>
                         <td>Заёмные средства (поступления)</td>
-                        <td class="input-info"><input type="number" placeholder='0'/></td>
+                        <td class="input-info"><input type="number" placeholder='0' name ="funds_receipt" /></td>
                         <td>руб</td>
                         <td class="td-check"><img src="{% static 'financial_game/img/no.svg' %}"></td>
                     </tr>
                     <tr>
                         <td>Заёмные средства (возврат)</td>
-                        <td class="input-info"><input type="number" placeholder='0'/></td>
+                        <td class="input-info"><input type="number" placeholder='0' name ="funds_refund"/></td>
                         <td>руб</td>
                         <td class="td-check"><img src="{% static 'financial_game/img/no.svg' %}"></td>
                     </tr>
                     <tr>
                         <td>Инвестиции</td>
-                        <td class="input-info"><input type="number" placeholder='0'/></td>
+                        <td class="input-info"><input type="number" placeholder='0' name ="sponsor_invest" /></td>
                         <td>руб</td>
                         <td class="td-check"><img src="{% static 'financial_game/img/no.svg' %}"></td>
                     </tr>
@@ -222,18 +223,20 @@
                 <tbody class="tbody-result">
                     <tr>
                         <td>Денежный поток</td>
-                        <td class="input-info"><input type="number" placeholder='0'/></td>
+                        <td class="input-info"><input type="number" placeholder='0' name ="cash_flow" /></td>
                         <td>руб</td>
                         <td class="td-check"><img src="{% static 'financial_game/img/no.svg' %}"></td>
                     </tr>
                     <tr>
                         <td>Остаток денежных средств</td>
-                        <td class="input-info"><input type="number" placeholder='0'/></td>
+                        <td class="input-info"><input type="number" placeholder='0' name ="cash_balance_end"/></td>
                         <td>руб</td>
                         <td class="td-check"><img src="{% static 'financial_game/img/no.svg' %}"></td>
                     </tr>
                 </tbody>
             </table>
+       
+        <!--{{ form }}-->
 
         </div>
         <div class="expense expense-input-state">
@@ -242,11 +245,12 @@
             </p>
         </div>
     </div>
+    
       
     <div class=input-table-buttons>
         <div class="checking">
           <ul class="game-table-list ">
-            <li><a href=""><input type="button" value="Проверить" class="main-menu-button continue-button"></a></li>
+            <li><a href=""><button class="main-menu-button continue-button" type="submit"> Проверить </button></a></li>
           </ul>
         </div> 
         <div class="continue-game">
@@ -256,6 +260,7 @@
         </div> 
       
     </div>
+    </form>
 
   </body>
 </html>
