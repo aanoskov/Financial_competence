@@ -25,8 +25,10 @@ body {
     height: 100%;
     font-family: 'Yanone Kaffeesatz',"PoiretOne-Regular", Arial, sans-serif;
     font-size: 16px;
+   
     background: rgb(254,254,254);
     background: radial-gradient(circle, rgba(254,254,254,1) 0%, rgba(217,241,255,1) 85%, rgba(217,241,255,1) 100%);
+    
 }
 
 
@@ -749,4 +751,22 @@ body {
     height: 40px;
     margin: 0;
     font-size: 21px;
+}
+.game-results{
+    margin-top: -50px;
+    margin-bottom: 50px;    
+}
+
+#player-name-result{
+    font-size: 40px;
+    font-weight: 600;
+}
+#player-score-result{
+    font-size: 40px;
+    font-weight: 600;
+    
+}
+.thead-result{
+    text-align: center;
+    font-size: 25px;
 }
