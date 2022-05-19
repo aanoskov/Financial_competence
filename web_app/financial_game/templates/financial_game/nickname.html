@@ -13,8 +13,10 @@
       <h3 > тренажёр </h3>
       <h1> ФИНАНСОВАЯ ГРАМОТНОСТЬ </h1>
     </div> 
-    <div class="form">
-        <input type="text" class="input-name" autocomplete="off" id="name" name="text" required>
+    <form method="post">
+      {% csrf_token %}
+      <div class="form">
+        <input type="text" class="input-name" autocomplete="off" id="name" name="name" required>
         <label for="text" class="label-name">
             <span class="content-name">
               Введите имя
@@ -23,9 +25,11 @@
     </div>
     <div class="game-table">
       <ul class="game-table-list ">
-        <li><a href="{% url 'game' %}"><input type="button" value="Продолжить" class="main-menu-button continue-button"></a></li>
+        <li> <button class="main-menu-button continue-button" type="submit"> Продолжить </button></li>
       </ul>
-    </div>  
+    </div>
+
+    </form>
 
 
     
