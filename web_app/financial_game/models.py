@@ -3,15 +3,15 @@ from django.db import models
 from django.contrib.auth.models import User
 
 class green_card(models.Model):
-    text = models.CharField('Текст', max_length=250)
+    text = models.CharField('Описание', max_length=250)
     card_type = models.CharField('Тип карты', max_length=50)
-    count_1 = models.IntegerField('Кол-во 1 товара в этом месяце')
+    count_1 = models.IntegerField('Кол-во товара в этом месяце')
     price_1 = models.IntegerField('Цена 1 товара в этом месяце')
-    earnings = models.IntegerField('выручка')
-    discount = models.IntegerField('процент скидки')
-    count_2 = models.IntegerField('Кол-во 1 товара в следующем месяце')
+    earnings = models.IntegerField('Выручка')
+    discount = models.IntegerField('Процент скидки')
+    count_2 = models.IntegerField('Кол-во товара в следующем месяце')
     price_2 = models.IntegerField('Цена 1 товара в следующем месяце')
-    percent = models.IntegerField('процент онлайн магазина')
+    percent = models.IntegerField('Процент онлайн магазина')
 
     def __str__(self):
         return str(self.text)
@@ -22,14 +22,23 @@ class green_card(models.Model):
 
 
 class blue_card(models.Model):
-    text = models.CharField('Текст', max_length=250)
+    text = models.CharField('Описание', max_length=250)
     card_type = models.CharField('Тип карты', max_length=50)
-    salary_percent = models.IntegerField('процент премии сотрудникам')
-    count = models.IntegerField('количество')
-    price_1 = models.IntegerField('цена 1')
-    price_2 = models.IntegerField('цена 2')
-    price_3 = models.IntegerField('цена 3')
-
+    salary_percent = models.PositiveIntegerField('Процент премии сотрудникам', default=10)
+    salary_num = models.PositiveIntegerField('Премия программистам', default=50000)
+    fines = models.PositiveIntegerField('Штраф', default=1000)
+    online_shop = models.PositiveIntegerField('Цена онлайн-магазина', default=50000)
+    ads_percent = models.PositiveIntegerField('Проценты на SMM', default=2)
+    equip = models.PositiveIntegerField('Цена доп. оборудования', default=30000)
+    registration = models.PositiveIntegerField('Цена регистрации компании', default=5000)
+    fired_percent = models.PositiveIntegerField('Процент от оклада сотруднику, выполняющему обязательства другого', default=50)
+    detector_percent = models.PositiveIntegerField('Процент, на кот. выросла цена датчиков', default=15)
+    price_percent = models.PositiveIntegerField('Процент, на кот. выросла цена продукта', default=10)
+    education = models.PositiveIntegerField('Стоимость обучения сотрудника', default=12000)
+    hospitality_1 = models.PositiveIntegerField('Стоимость стенда', default=5000)
+    hospitality_2 = models.PositiveIntegerField('Стоимость флаеров', default=1000)
+    hospitality_3 = models.PositiveIntegerField('Стоимость места на выставке', default=15000)
+    
     def __str__(self):
         return str(self.text)
 
