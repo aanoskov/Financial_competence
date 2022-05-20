@@ -9,17 +9,17 @@
   </head>
 
   <body class="body-table-input">
-
-    <form method="post">
-        {% csrf_token %}
+      
+<!--    <form method="post">-->
+<!--        {% csrf_token %}-->
     <div class="main-status-bar">
       <div class="month-status">
         <h2>Месяц</h2>
-        <p>1</p>
+        <p>12</p>
       </div>
       <div class="money-status">
         <h2>Сумма </h2>
-        <p>10000</p>
+        <p>123456789</p>
       </div>
       <div class="money-image">
 <!--          <img src="../img/peppa.svg">-->
@@ -31,22 +31,23 @@
                 В этом месяце вы решили принять участие в выставке. Для этого подготовили выставочный стенд – <b>5.000</b> рублей, распечатали флаеры о продукции – 1.000 рублей, а также оплатили место на выставке – 15.000 рублей. а также оплатили место на выставке – 15.000 рублей. а также оплатили место на выставке – <b>15.000.556</b>
             </p>
         </div>
+
         <div class="input-game-table">
             <table class="after-month-table">
                 <thead>
                     <tr>
                         <th><b>Бюджет движения денег по проекту</b></th>
                         <td>Количество</td>
-                        <td>Единицы</td>
                         <td>Проверка</td>
+                        <td class="td-check-head"></td>
                     </tr>
 
                 </thead>
                 <thead>
                     <tr>
                         <th>Доходы (выручка)</th>
-                        <td class="input-info"><input id="test-inp" type="number" placeholder='0' name ="earnings" /></td>
-                        <td>руб</td>
+                        <td class="input-info"><input id="test-inp" type="number" placeholder='0' name ="earnings"/></td>
+                        <td>-</td>
                         <td class="td-check"><img src="{% static 'financial_game/img/no.svg' %}"></td>
                     </tr>
 
@@ -55,14 +56,14 @@
                     <tr>
                         <td>Средняя цена  продукта</td>
                         <td class="input-info"><input type="number" placeholder='0' name ="price"/></td>
-                        <td>руб</td>
+                        <td>-</td>
                         <td class="td-check"><img src="{% static 'financial_game/img/no.svg' %}"></td>
 
                     </tr>
                     <tr>
                         <td>Количество продукта</td>
                         <td class="input-info"><input type="number" placeholder='0' name ="count"/></td>
-                        <td>Шт</td>
+                        <td>-</td>
                         <td class="td-check"><img src="{% static 'financial_game/img/no.svg' %}"></td>
 
                     </tr>
@@ -70,8 +71,8 @@
                 <thead>
                     <tr>
                         <th>Текущие расходы всего</th>
-                        <td class="input-info"><input type="number" placeholder='0' name ="current_costs" /></td>
-                        <td>руб</td>
+                        <td class="input-info"><input type="number" placeholder='0' name ="current_costs"/></td>
+                        <td>-</td>
                         <td class="td-check"><img src="{% static 'financial_game/img/no.svg' %}"></td>
                     </tr>
                 </thead>
@@ -79,57 +80,57 @@
                     <tr>
                         <td>Себестоимость продукции</td> 
                         <td class="input-info"><input type="number" placeholder='0' name ="cost_price"/></td>
-                        <td>руб</td>
+                        <td>-</td>
                         <td class="td-check"><img src="{% static 'financial_game/img/no.svg' %}"></td>
                     </tr>
                     <tr>
                         <td>Заработная плата сотрудников</td>
-                        <td class="input-info"><input type="number" placeholder='0' name ="salary" /></td>
-                        <td>руб</td>
+                        <td class="input-info"><input type="number" placeholder='0' name ="salary"/></td>
+                        <td>-</td>
                         <td class="td-check"><img src="{% static 'financial_game/img/no.svg' %}"></td>
                     </tr>
                     <tr>
                         <td>Начисления на заработную плату сотрудников</td>
-                        <td class="input-info"><input type="number" placeholder='0' name ="salary_taxes" /></td>
-                        <td>руб</td>
+                        <td class="input-info"><input type="number" placeholder='0' name ="salary_taxes"/></td>
+                        <td>-</td>
                         <td class="td-check"><img src="{% static 'financial_game/img/no.svg' %}"></td>
                     </tr>
                     <tr>
                         <td>Услуги сторонних организаций</td>
-                        <td class="input-info"><input type="number" placeholder='0' name ="third_party" /></td>
-                        <td>руб</td>
+                        <td class="input-info"><input type="number" placeholder='0' name ="third_party"/></td>
+                        <td>-</td>
                         <td class="td-check"><img src="{% static 'financial_game/img/no.svg' %}"></td>
                     </tr>
                     <tr>
                         <td>Расходы на рекламу</td>
-                        <td class="input-info"><input type="number" placeholder='0' name ="ads" /></td>
-                        <td>руб</td>
+                        <td class="input-info"><input type="number" placeholder='0' name ="ads"/></td>
+                        <td>-</td>
                         <td class="td-check"><img src="{% static 'financial_game/img/no.svg' %}"></td>
                     </tr>
                     <tr>
                         <td>Аренда</td>
-                        <td class="input-info"><input type="number" placeholder='0' name ="rent_pay" /></td>
-                        <td>руб</td>
+                        <td class="input-info"><input type="number" placeholder='0' name ="rent_pay"/></td>
+                        <td>-</td>
                         <td class="td-check"><img src="{% static 'financial_game/img/no.svg' %}"></td>
                     </tr>
                     <tr>
                         <td>Другие расходы</td>
-                        <td class="input-info"><input type="number" placeholder='0' name ="other" /></td>
-                        <td>руб</td>
+                        <td class="input-info"><input type="number" placeholder='0' name ="other"/></td>
+                        <td>-</td>
                         <td class="td-check"><img src="{% static 'financial_game/img/no.svg' %}"></td>
                     </tr>
                 </tbody>
                 <tbody class="tbody-result">
                     <tr>
                         <td>Общая сумма налогов</td>
-                        <td class="input-info"><input type="number" placeholder='0' name ="earning_taxes" /></td>
-                        <td>руб</td>
+                        <td class="input-info"><input type="number" placeholder='0' name ="earning_taxes"/></td>
+                        <td>-</td>
                         <td class="td-check"><img src="{% static 'financial_game/img/no.svg' %}"></td>
                     </tr>
                     <tr>
                         <td>Финансовый результат</td>
-                        <td class="input-info"><input type="number" placeholder='0' name ="fin_res" /></td>
-                        <td>руб</td>
+                        <td class="input-info"><input type="number" placeholder='0' name ="fin_res"/></td>
+                        <td>-</td>
                         <td class="td-check"><img src="{% static 'financial_game/img/no.svg' %}"></td>
                     </tr>
                 </tbody>
@@ -137,46 +138,46 @@
                 <thead>
                     <tr>
                         <th>Текущие расходы всего</th>
-                        <td class="input-info"><input type="number" placeholder='0' name ="investments" /></td>
-                        <td>руб</td>
+                        <td class="input-info"><input type="number" placeholder='0' name ="investments"/></td>
+                        <td>-</td>
                         <td class="td-check"><img src="{% static 'financial_game/img/no.svg' %}"></td>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td>Закупка оборудования</td> 
-                        <td class="input-info"><input type="number" placeholder='0' name ="equip" /></td>
-                        <td>руб</td>
+                        <td class="input-info"><input type="number" placeholder='0' name ="equip"/></td>
+                        <td>-</td>
                         <td class="td-check"><img src="{% static 'financial_game/img/no.svg' %}"></td>
                     </tr>
                     <tr>
                         <td>Проведение научных исследований</td>
-                        <td class="input-info"><input type="number" placeholder='0' name ="research" /></td>
-                        <td>руб</td>
+                        <td class="input-info"><input type="number" placeholder='0' name ="research"/></td>
+                        <td>-</td>
                         <td class="td-check"><img src="{% static 'financial_game/img/no.svg' %}"></td>
                     </tr>
                     <tr>
                         <td>Приобретение технологий</td>
-                        <td class="input-info"><input type="number" placeholder='0' name ="tech" /></td>
-                        <td>руб</td>
+                        <td class="input-info"><input type="number" placeholder='0' name ="tech"/></td>
+                        <td>-</td>
                         <td class="td-check"><img src="{% static 'financial_game/img/no.svg' %}"></td>
                     </tr>
                     <tr>
                         <td>Обучение сотрудников</td>
-                        <td class="input-info"><input type="number" placeholder='0' name ="education" /></td>
-                        <td>руб</td>
+                        <td class="input-info"><input type="number" placeholder='0' name ="education"/></td>
+                        <td>-</td>
                         <td class="td-check"><img src="{% static 'financial_game/img/no.svg' %}"></td>
                     </tr>
                     <tr>
                         <td>Представительские расходы</td>
-                        <td class="input-info"><input type="number" placeholder='0' name ="hospitality" /></td>
-                        <td>руб</td>
+                        <td class="input-info"><input type="number" placeholder='0' name ="hospitality"/></td>
+                        <td>-</td>
                         <td class="td-check"><img src="{% static 'financial_game/img/no.svg' %}"></td>
                     </tr>
                     <tr>
                         <td>Другие расходы</td>
-                        <td class="input-info"><input type="number" placeholder='0' name ="other_invest" /></td>
-                        <td>руб</td>
+                        <td class="input-info"><input type="number" placeholder='0' name ="other_invest"/></td>
+                        <td>-</td>
                         <td class="td-check"><img src="{% static 'financial_game/img/no.svg' %}"></td>
                     </tr>
                 </tbody>
@@ -184,59 +185,57 @@
                     <tr>
                         <th>Финансирование</th>
                         <td class="input-info"><input type="number" placeholder='0' name ="funding"/></td>
-                        <td>руб</td>
+                        <td>-</td>
                         <td class="td-check"><img src="{% static 'financial_game/img/no.svg' %}"></td>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td>Получение грантов</td> 
-                        <td class="input-info"><input type="number" placeholder='0' name ="grants" /></td>
-                        <td>руб</td>
+                        <td class="input-info"><input type="number" placeholder='0' name ="grants"/></td>
+                        <td>-</td>
                         <td class="td-check"><img src="{% static 'financial_game/img/no.svg' %}"></td>
                     </tr>
                     <tr>
                         <td>Собственные средства основателей</td>
-                        <td class="input-info"><input type="number" placeholder='0' name ="own_funds" /></td>
-                        <td>руб</td>
+                        <td class="input-info"><input type="number" placeholder='0' name ="own_funds"/></td>
+                        <td>-</td>
                         <td class="td-check"><img src="{% static 'financial_game/img/no.svg' %}"></td>
                     </tr>
                     <tr>
                         <td>Заёмные средства (поступления)</td>
-                        <td class="input-info"><input type="number" placeholder='0' name ="funds_receipt" /></td>
-                        <td>руб</td>
+                        <td class="input-info"><input type="number" placeholder='0' name ="funds_receipt"/></td>
+                        <td>-</td>
                         <td class="td-check"><img src="{% static 'financial_game/img/no.svg' %}"></td>
                     </tr>
                     <tr>
                         <td>Заёмные средства (возврат)</td>
                         <td class="input-info"><input type="number" placeholder='0' name ="funds_refund"/></td>
-                        <td>руб</td>
+                        <td>-</td>
                         <td class="td-check"><img src="{% static 'financial_game/img/no.svg' %}"></td>
                     </tr>
                     <tr>
                         <td>Инвестиции</td>
-                        <td class="input-info"><input type="number" placeholder='0' name ="sponsor_invest" /></td>
-                        <td>руб</td>
+                        <td class="input-info"><input type="number" placeholder='0' name ="sponsor_invest"/></td>
+                        <td>-</td>
                         <td class="td-check"><img src="{% static 'financial_game/img/no.svg' %}"></td>
                     </tr>
                 </tbody>
                 <tbody class="tbody-result">
                     <tr>
                         <td>Денежный поток</td>
-                        <td class="input-info"><input type="number" placeholder='0' name ="cash_flow" /></td>
-                        <td>руб</td>
+                        <td class="input-info"><input type="number" placeholder='0' name ="cash_flow"/></td>
+                        <td>-</td>
                         <td class="td-check"><img src="{% static 'financial_game/img/no.svg' %}"></td>
                     </tr>
                     <tr>
                         <td>Остаток денежных средств</td>
                         <td class="input-info"><input type="number" placeholder='0' name ="cash_balance_end"/></td>
-                        <td>руб</td>
+                        <td>-</td>
                         <td class="td-check"><img src="{% static 'financial_game/img/no.svg' %}"></td>
                     </tr>
                 </tbody>
             </table>
-       
-        <!--{{ form }}-->
 
         </div>
         <div class="expense expense-input-state">
@@ -245,7 +244,7 @@
             </p>
         </div>
     </div>
-    
+
       
     <div class=input-table-buttons>
         <div class="checking">
@@ -253,14 +252,18 @@
             <li><a href=""><button class="main-menu-button continue-button" type="submit"> Проверить </button></a></li>
           </ul>
         </div> 
+        <div class="show-results">
+          <ul class="game-table-list " style="visibility: visible;">
+            <li><a href=""><input type="button" value="Показать результаты" class="main-menu-button continue-button show-res-button"></a></li>
+          </ul>
+        </div> 
         <div class="continue-game">
-          <ul class="game-table-list ">
+          <ul class="game-table-list " style="visibility: visible;">
             <li><a href="{% url 'game' %}"><input type="button" value="Продолжить" class="main-menu-button continue-button"></a></li>
           </ul>
         </div> 
       
     </div>
-    </form>
-
+<!--    </form>-->
   </body>
 </html>
