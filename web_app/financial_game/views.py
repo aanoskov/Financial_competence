@@ -17,17 +17,21 @@ def game(request):
 def nickname(request):
 
     error=''
-
     if request.method == 'POST':
         form = userForm(request.POST)
         if form.is_valid():
             username = request.POST.get("name")
             if User.objects.filter(username=username).exists():
-                error = 'Такой игрок уже существует'
+                error = 'Такой игрок уже существует, придумайте другое имя'
             else:
-                person = User.objects.create_user(username)
+                person = User()
+                person.username=username
+                person.save()
                 login(request, person)
-            return redirect('game')
+                person_id = request.user.id
+                persons_table=table(player= User.objects.get(id=person_id))
+                persons_table.save()
+                return redirect('table_input')
         else:
             error = 'Форма не валидна'
 
