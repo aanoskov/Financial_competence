@@ -16,6 +16,7 @@
     <form method="post">
       {% csrf_token %}
       <div class="form">
+        
         <input type="text" class="input-name" autocomplete="off" id="name" name="name" required>
         <label for="text" class="label-name">
             <span class="content-name">
@@ -23,6 +24,7 @@
             </span>
         </label>
     </div>
+    <span>{{ error }}</span>
     <div class="game-table">
       <ul class="game-table-list ">
         <li> <button class="main-menu-button continue-button" type="submit"> Продолжить </button></li>

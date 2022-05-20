@@ -1,4 +1,5 @@
 from .models import table, user
+from django.contrib.auth.models import User
 from django.forms import ModelForm, TextInput
 
 class userForm(ModelForm):
