@@ -785,3 +785,12 @@ body {
     text-align: center;
     font-size: 25px;
 }
+.name-error{
+    margin-top: -50px;
+    margin-bottom: 100px;
+    
+    text-align: center;
+    font-family: "RobotoFlex-Regular";
+    font-weight: 600;
+    font-size: 31px;
+}
