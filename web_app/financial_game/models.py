@@ -2,17 +2,35 @@ from tabnanny import verbose
 from django.db import models
 from django.contrib.auth.models import User
 
-class green_card(models.Model):
+class GreenCard(models.Model):
+    card_type_choises = [('products', 'Выпуск продукции 1 мес'),
+                         ('sale', 'Распродажа'),
+                         ('earnings', 'Выручка'),
+                         ('opt_1', 'Оптовый контрак 1 мес'),
+                         ('opt_2', 'Оптовый контрак 2 мес'),
+                         ('online', 'Онлайн заказы')]
     text = models.CharField('Описание', max_length=250)
-    card_type = models.CharField('Тип карты', max_length=50)
-    count_1 = models.IntegerField('Кол-во товара в этом месяце')
-    price_1 = models.IntegerField('Цена 1 товара в этом месяце')
-    earnings = models.IntegerField('Выручка')
+    card_type = models.CharField('Тип карты', max_length=15, choices=card_type_choises,)
+    # products
+    count_prod = models.IntegerField('Кол-во товара в этом месяце')
+    price_prod = models.IntegerField('Цена 1 товара в этом месяце')
+    #sale
     discount = models.IntegerField('Процент скидки')
-    count_2 = models.IntegerField('Кол-во товара в следующем месяце')
-    price_2 = models.IntegerField('Цена 1 товара в следующем месяце')
-    percent = models.IntegerField('Процент онлайн магазина')
-
+    # earnings
+    earnings = models.IntegerField('Выручка')
+    price_earn = models.IntegerField('Цена 1 товара в этом месяце')
+    # opt 1 month
+    count_opt = models.IntegerField('Кол-во товара в этом месяце')
+    earnings_opt = models.IntegerField('Выручка')
+    #opt 2 months
+    count_opt_1 = models.IntegerField('Кол-во товара в этом месяце')
+    price_opt_1 = models.IntegerField('Цена 1 товара в этом месяце')
+    count_opt_2 = models.IntegerField('Кол-во товара в следующем месяце')
+    price_opt_2 = models.IntegerField('Цена 1 товара в следующем месяце')
+    # online
+    count_online = models.IntegerField('Кол-во товара в этом месяце')
+    price_online = models.IntegerField('Цена 1 товара в этом месяце')
+    percents = models.IntegerField('Процент онлайн магазина')
     def __str__(self):
         return str(self.text)
 
@@ -21,16 +39,25 @@ class green_card(models.Model):
         verbose_name_plural = "Зеленые карты"
 
 
-class blue_card(models.Model):
+class BlueCard(models.Model):
+    card_type_choises = [('bonus', 'Бонус к зарплате'),
+                         ('fines', 'Штрафы (налоги, регистрация)'),
+                         ('online_shop', 'Покупка онлайн-магазина'),
+                         ('ads', 'Траты на рекламу (СММ)'),
+                         ('equip', 'Закупка оборудования'),
+                         ('fired', 'Уволился 1 программист'),
+                         ('detector', 'Повышение цен на компоненты'),
+                         ('education', 'Доп. обучение сотрудников'),
+                         ('hospitality', 'Выставка')]
     text = models.CharField('Описание', max_length=250)
-    card_type = models.CharField('Тип карты', max_length=50)
+    card_type = models.CharField('Тип карты', max_length=15, choices=card_type_choises)
     salary_percent = models.PositiveIntegerField('Процент премии сотрудникам', default=10)
     salary_num = models.PositiveIntegerField('Премия программистам', default=50000)
-    fines = models.PositiveIntegerField('Штраф', default=1000)
+    fines = models.PositiveIntegerField('Штраф', default=1000) # or registration
     online_shop = models.PositiveIntegerField('Цена онлайн-магазина', default=50000)
     ads_percent = models.PositiveIntegerField('Проценты на SMM', default=2)
     equip = models.PositiveIntegerField('Цена доп. оборудования', default=30000)
-    registration = models.PositiveIntegerField('Цена регистрации компании', default=5000)
+    # registration = models.PositiveIntegerField('Цена регистрации компании', default=5000)
     fired_percent = models.PositiveIntegerField('Процент от оклада сотруднику, выполняющему обязательства другого', default=50)
     detector_percent = models.PositiveIntegerField('Процент, на кот. выросла цена датчиков', default=15)
     price_percent = models.PositiveIntegerField('Процент, на кот. выросла цена продукта', default=10)
