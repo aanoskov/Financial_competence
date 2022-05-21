@@ -7,6 +7,8 @@ from .models import user, table
 from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.models import User
 
+import copy
+
 # Create your views here.
 def main(request):
     return render(request,'financial_game/main.html')
@@ -16,6 +18,7 @@ def game(request):
     return render(request,'financial_game/game.html')
 
 def nickname(request):
+    logout(request)
 
     error=''
     if request.method == 'POST':
@@ -107,6 +110,7 @@ def result(request):
     return render(request,'financial_game/results.html',data)
 
 def rating(request):
+    logout(request)
     players=table.objects.order_by('result')
     player = {}
     rating=[]
@@ -114,7 +118,7 @@ def rating(request):
         player['result']=one.result
         user = User.objects.get(id=one.player.id)
         player['username'] = user.username
-        rating.append(player)
+        rating.append(copy.copy(player))
 
     
     
