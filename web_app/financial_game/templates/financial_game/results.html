@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="ru">
   <head>
@@ -6,7 +7,7 @@
     <meta content="true" name="HandheldFriendly"/>
     <meta content="width" name="MobileOptimized"/>
     <meta content="yes" name="apple-mobile-web-app-capable"/>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="{% static 'financial_game/css/style.css' %}">
     <title>Тренажёр финансовой грамотности</title>
   </head>
 
@@ -29,8 +30,8 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td id="player-name-result">Nameaaaaaaaaaaaaaa</td>
-                        <td id="player-score-result">0000000</td>
+                        <td id="player-name-result">{{player}}</td>
+                        <td id="player-score-result">{{player_result}}</td>
                     </tr>
                 </tbody>
             </table>
@@ -38,8 +39,8 @@
     </div>
     <div class="main-menu">
       <ul class="main-menu-list">
-        <li><a href="main.html"><input type="button" value="Главное меню" class="main-menu-button result-button"></a></li>
-        <li><a href=""><input type="button" value="Рейтинг" class="main-menu-button rating-button"></a></li>
+        <li><a href="{% url 'main' %}"><input type="button" value="Главное меню" class="main-menu-button result-button"></a></li>
+        <li><a href="{% url 'rating' %}"><input type="button" value="Рейтинг" class="main-menu-button rating-button"></a></li>
       </ul>
     </div>  
 

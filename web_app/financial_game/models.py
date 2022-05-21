@@ -95,6 +95,7 @@ class table(models.Model):
     cash_balance_end = models.FloatField('Остаток денежных средств на конец',default=0)
 
     player = models.ForeignKey(User, on_delete=models.CASCADE, default=1)
+    result = models.FloatField('Результат игры',default=0)
 
     def __str__(self):
         return str(self.month_num)
