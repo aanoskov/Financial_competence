@@ -11,7 +11,7 @@ class userForm(ModelForm):
 class tableForm(ModelForm):
     class Meta:
         model = table
-        fields = ['month_num','cash_balance_begin','earnings','count','price',
+        fields = ['earnings','count','price',
         'current_costs','cost_price','salary','salary_taxes',
         'third_party','ads','rent_pay','other','earning_taxes','fin_res',
         'investments','equip','research','tech','education','hospitality','other_invest',
