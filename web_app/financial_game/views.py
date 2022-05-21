@@ -45,24 +45,43 @@ def nickname(request):
 def table_input(request):
     error=''
 
+    user_id = None
+    if request.user.is_authenticated:
+        user_id = request.user.id
+    else:
+        user_id = 1
+    current_table= table.objects.get(player=user_id) # table of the current player
+    month_num=current_table.month_num
+    cash_balance_begin=current_table.cash_balance_begin
+    #if current_table.month_num > 12:
+        #call method of calculating result and return raiting page
+    #else: we random 2 cards do all this
+
     if request.method == 'POST':
-        form = tableForm(request.POST)
-        if form.is_valid():
-            user_id = None
-            if request.user.is_authenticated:
-                user_id = request.user.id
-            else:
-                user_id = 1
-            form.save()
-            # tab=table(player=User.objects.get(id=user_id))
-            # tab.save()
+        form = tableForm(request.POST,instance=current_table) # take new values of the table from form
+        if form.is_valid(): 
+            form.save() # save table updates
+            #here we need check 
+            # if check is ok:
+            #   current_table= table.objects.get(player=user_id)
+            #   current_table.month_num +=1
+            #   current_table.cash_balance_begin = current_table.cash_balance_end
+            #   return redirect('table_input')
+            # elif we have mistakes,
+            #  return red mistakes
+            current_table= table.objects.get(player=user_id) # return to updated table
+            current_table.month_num +=1 #change number of month
+            current_table.save()
+            return redirect('table_input')
         else:
             error = 'Форма не валидна'
 
-    form = tableForm()
+    form = tableForm(instance=current_table)
     data = {
         'form': form,
-        'error': error
+        'error': error,
+        'month_num':month_num,
+        'cash_balance_begin':cash_balance_begin
     }
 
     return render(request,'financial_game/table-input.html', data)
