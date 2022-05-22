@@ -12,14 +12,27 @@
   </head>
 
   <body>
+    <div class="main-header rating-header">
+      <h1> РЕЙТИНГ ИГРОКОВ </h1>
+    </div> 
+    <div class="rating-list">
       {% for player in rating %}
-      <div>{{player.username}} {{player.result}}</div>
-
+            <table class="after-month-table result-table rating-table">
+<!--                <div class="rating-name">{{player.username}}</div> <div class="rating-res">{{player.result}}</div>-->
+                <tbody>
+                    <tr>
+                        <td class="rating-name">{{player.username}}</td>
+                        <td class="rating-res">{{player.result}}</td>
+<!--                        {{player.result}}-->
+                    </tr>
+                </tbody>
+            </table>
       {% endfor %}
-
-
-
-
-
+    </div>
+    <div class="main-menu rating-menu">
+      <ul class="main-menu-list rating-menu-list">
+        <li><a href="{% url 'main' %}"><input type="button" value="Главное меню" class="main-menu-button result-button rating-button"></a></li>
+      </ul>
+    </div>  
   </body>
 </html>
