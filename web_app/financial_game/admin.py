@@ -56,7 +56,7 @@ class BlueCardAdmin(admin.ModelAdmin):
         }),
         ('Траты на рекламу (СММ)', {
             'classes': ('collapse',),
-            'fields': ('ads_percent',)
+            'fields': ('ads',)
         }),
         ('Закупка оборудования', {
             'classes': ('collapse',),

@@ -55,7 +55,7 @@ class BlueCard(models.Model):
     # salary_num = models.PositiveIntegerField('Премия программистам', default=0)
     fines = models.PositiveIntegerField('Штраф', default=0) # or registration
     online_shop = models.PositiveIntegerField('Цена онлайн-магазина', default=0)
-    ads_percent = models.PositiveIntegerField('Проценты на SMM', default=0)
+    ads = models.PositiveIntegerField('Проценты на SMM', default=0)
     equip = models.PositiveIntegerField('Цена доп. оборудования', default=0)
     # registration = models.PositiveIntegerField('Цена регистрации компании', default=5000)
     fired_percent = models.PositiveIntegerField('Процент от оклада сотруднику, выполняющему обязательства другого', default=0)
@@ -146,7 +146,7 @@ class true_table(models.Model):
     cost_price_per_one_maket = models.FloatField('Цена макета', default=200) 
     cost_price = models.FloatField('Себестоимость', default=0) 
     employees = models.IntegerField('Кол-во работников', default=3) 
-    salary = models.FloatField('З/п работников', default=10000) 
+    salary = models.FloatField('З/п работников', default=30000) 
     salary_taxes = models.FloatField('Налог на зп', default=0) 
     need_in_third_party = models.BooleanField('Нужда в сторонней организации', default=True)
     third_party_per_one = models.FloatField('Стор. орг. на 1 товар', default=200) 
@@ -165,6 +165,7 @@ class true_table(models.Model):
     education = models.FloatField('Обучение сотрудников', default=0) 
     hospitality = models.FloatField('Представительские расходы', default=0)
     cash_balance_end = models.FloatField('Остаток денежных средств на конец',default=0)
+    cash_flow = models.FloatField('Денежный поток',default=0)
 
     # additional fields
     next_month_count = models.IntegerField('Кол-во в след. мес.', default=0)

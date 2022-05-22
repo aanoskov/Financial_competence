@@ -14,9 +14,6 @@ def main(request):
     return render(request,'financial_game/main.html')
     #return HttpResponse("<h4>МЫ ТУТ</h4>")
 
-def game(request):
-    return render(request,'financial_game/game.html')
-
 def get_random_cards():
     green_card = GreenCard.objects.all()
     blue_card = BlueCard.objects.all()
@@ -168,6 +165,7 @@ def table_input(request):
     month_num=current_table.month_num
     cash_balance_begin=current_table.cash_balance_begin
     if current_table.month_num > 12:
+        #current_table.
         cur_sup.delete()
         return redirect('result')
     else:
@@ -252,15 +250,16 @@ def table_input(request):
                                 current_table.sponsor_invest)
                 if current_table.funding in range(int(true_fundings - 10), int(true_fundings + 10)) :
                     binaries[19] = 1
-                true_cash_flow = (true_current_table.fin_res +
+                true_current_table.cash_flow = (true_current_table.fin_res -
                                 true_current_table.investments +
                                 current_table.funding)
-                if current_table.cash_flow in range(int(true_cash_flow - 10), int(true_cash_flow + 10)):
+                true_current_table.cash_balance_end = current_table.cash_flow + current_table.cash_balance_begin
+                if current_table.cash_flow in range(int(true_current_table.cash_flow - 10), int(true_current_table.cash_flow + 10)):
                     binaries[20] = 1
-                if (current_table.cash_flow + current_table.cash_balance_begin) > 0:
+                if (true_current_table.cash_balance_end) > 0:
                     binaries[21] = 1
                 if 0 in binaries:
-                    binaries = ["{% static 'financial_game/img/yes.svg' %}" if binaries[i]==1 else "{% static 'financial_game/img/no.svg' %}" for i in range(len(binaries))]
+                    #binaries = ["{% static 'financial_game/img/yes.svg' %}" if binaries[i]==1 else "{% static 'financial_game/img/no.svg' %}" for i in range(len(binaries))]
                     data = {
                         'green_card': cur_sup.green_card_text,
                         'blue_card': cur_sup.blue_card_text,
@@ -269,6 +268,8 @@ def table_input(request):
                         'month_num':month_num,
                         'cash_balance_begin':cash_balance_begin,
                         'binaries': binaries,
+                        'true_current_table': true_current_table
+
                     }
                     return render(request,'financial_game/table_input.html', data)
 
@@ -282,6 +283,7 @@ def table_input(request):
                 #   return redirect('table_input')
                 # elif we have mistakes,
                 #  return red mistakes
+                current_table.cash_balance_begin=current_table.cash_balance_end
                 current_table.month_num +=1 #change number of month
                 current_table.save()
                 return redirect('table_input')
