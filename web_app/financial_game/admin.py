@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import GreenCard, BlueCard, table, user
+from .models import GreenCard, BlueCard, table, user, true_table, Support
 
 class GreenCardAdmin(admin.ModelAdmin):
     fieldsets = (
@@ -84,3 +84,5 @@ admin.site.register(GreenCard, GreenCardAdmin)
 admin.site.register(BlueCard, BlueCardAdmin)
 admin.site.register(table)
 admin.site.register(user)
+admin.site.register(true_table)
+admin.site.register(Support)

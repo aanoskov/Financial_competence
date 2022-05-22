@@ -74,7 +74,7 @@ class BlueCard(models.Model):
         verbose_name_plural = "Голубые карты"
 
 class user(models.Model):
-    name = models.CharField('Имя игрока', max_length=50)
+    name = models.CharField('Имя игрока', max_length=20)
     #game_move = models.OneToOneField(table,on_delete=models.CASCADE)
     result = models.IntegerField('Результат',default=0)
 
@@ -111,7 +111,7 @@ class table(models.Model):
     education = models.FloatField('Обучение сотрудников',default=0)
     hospitality = models.FloatField('Представительские расходы',default=0)
     other_invest = models.FloatField('Другие расходы',default=0)
-    #sponsor
+    # financing
     funding = models.FloatField('Финансирование',default=0)
     grants = models.FloatField('Гранты',default=0)
     own_funds = models.FloatField('Собственные средства основателей',default=0)
@@ -130,3 +130,78 @@ class table(models.Model):
     class Meta:
         verbose_name = "Таблица хода"
         verbose_name_plural = "Таблицы хода"
+
+
+class true_table(models.Model):
+    # default values
+    def_salary = models.FloatField('', default=10000, editable=False) 
+    def_employees = models.FloatField('', default=3, editable=False)
+    # earnings
+    earnings = models.FloatField('Выручка', default=0)
+    price = models.FloatField('Цена', default=0)
+    count = models.IntegerField('Кол-во товара', default=0)
+    # current payments
+    current_costs = models.FloatField('Текущ. расходы', default=0)
+    cost_price_per_one_detector = models.FloatField('Цена детектора', default=500)
+    cost_price_per_one_maket = models.FloatField('Цена макета', default=200) 
+    cost_price = models.FloatField('Себестоимость', default=0) 
+    employees = models.IntegerField('Кол-во работников', default=3) 
+    salary = models.FloatField('З/п работников', default=10000) 
+    salary_taxes = models.FloatField('Налог на зп', default=0) 
+    need_in_third_party = models.BooleanField('Нужда в сторонней организации', default=True)
+    third_party_per_one = models.FloatField('Стор. орг. на 1 товар', default=200) 
+    third_party = models.FloatField('Итог стор. орг.', default=0) 
+    ads = models.FloatField('Реклама', default=0) 
+    rent_pay = models.FloatField('Аренда', default=10000) 
+    other = models.FloatField('Другие расходы', default=0) 
+    earning_taxes = models.FloatField('Налог на прибыль', default=0) 
+    new_provider = models.FloatField('Новый поставщик', default=1)  # additional percents for price
+    fin_res = models.FloatField('Фин. рез.', default=0) 
+    # investments
+    investments = models.FloatField('Инвестиции', default=0) 
+    equip = models.FloatField('Оборудование', default=0) 
+    research = models.FloatField('Исследования', default=0) 
+    tech = models.FloatField('Технологии', default=0) 
+    education = models.FloatField('Обучение сотрудников', default=0) 
+    hospitality = models.FloatField('Представительские расходы', default=0)
+    cash_balance_end = models.FloatField('Остаток денежных средств на конец',default=0)
+
+    # additional fields
+    next_month_count = models.IntegerField('Кол-во в след. мес.', default=0)
+    next_month_price = models.FloatField('Цена в след. мес.', default=0) 
+    online_shop = models.BooleanField('', default=False)
+
+    player = models.ForeignKey(User, on_delete=models.CASCADE, default=1)
+
+    def update(self):
+        self.earnings = 0
+        self.price = 0
+        self.count = 0
+        self.salary = self.def_salary
+        self.current_costs, self.cost_price, self.salary_taxes, self.third_party = 0, 0, 0, 0
+        self.ads, self.other, self.earning_taxes, self.fin_res = 0, 0, 0, 0
+        self.investments, self.equip, self.research, self.tech, self.education, self.hospitality = 0, 0, 0, 0, 0, 0
+        return
+
+    def __str__(self):
+        return str(self.player)
+
+    class Meta:
+        verbose_name = "Итсинная таблица хода"
+        verbose_name_plural = "Итсинные таблицы хода"
+
+
+class Support(models.Model):
+    binaries = models.CharField('', max_length=43 ,default='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0')
+    values = models.CharField('', max_length = 300, default='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0')
+    blue_card_text = models.CharField('', max_length=300, default='')
+    green_card_text = models.CharField('', max_length=300, default='')
+
+    player = models.ForeignKey(User, on_delete=models.CASCADE, default=1)
+
+    def __str__(self):
+        return str(self.player)
+
+    class Meta:
+        verbose_name = "Админ-класс"
+        verbose_name_plural = "Админ-таблицы"

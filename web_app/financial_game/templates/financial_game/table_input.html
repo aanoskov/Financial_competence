@@ -51,8 +51,8 @@
                         <tr>
                             <th>Доходы (выручка)</th>
                             <td class="input-info">{{form.earnings}}</td>
-                            <td>-</td>
-                            <td class="td-check"><img src="{% static 'financial_game/img/no.svg' %}"></td>
+                            <td>{{binaries.0}}</td>
+                            <td class="td-check"><img src={{binaries.0}}></td>
                         </tr>
 
                     </thead>
@@ -60,14 +60,14 @@
                         <tr>
                             <td>Средняя цена  продукта</td>
                             <td class="input-info">{{form.price}}</td>
-                            <td>-</td>
+                            <td>{{binaries.1}}</td>
                             <td class="td-check"><img src="{% static 'financial_game/img/no.svg' %}"></td>
 
                         </tr>
                         <tr>
                             <td>Количество продукта</td>
                             <td class="input-info">{{form.count}}</td>
-                            <td>-</td>
+                            <td>{{binaries.2}}</td>
                             <td class="td-check"><img src="{% static 'financial_game/img/no.svg' %}"></td>
 
                         </tr>
@@ -76,7 +76,7 @@
                         <tr>
                             <th>Текущие расходы всего</th>
                             <td class="input-info">{{form.current_costs}}</td>
-                            <td>-</td>
+                            <td>{{binaries.3}}</td>
                             <td class="td-check"><img src="{% static 'financial_game/img/no.svg' %}"></td>
                         </tr>
                     </thead>
@@ -84,43 +84,43 @@
                         <tr>
                             <td>Себестоимость продукции</td> 
                             <td class="input-info">{{form.cost_price}}</td>
-                            <td>-</td>
+                            <td>{{binaries.4}}</td>
                             <td class="td-check"><img src="{% static 'financial_game/img/no.svg' %}"></td>
                         </tr>
                         <tr>
                             <td>Заработная плата сотрудников</td>
                             <td class="input-info">{{form.salary}}</td>
-                            <td>-</td>
+                            <td>{{binaries.5}}</td>
                             <td class="td-check"><img src="{% static 'financial_game/img/no.svg' %}"></td>
                         </tr>
                         <tr>
                             <td>Начисления на заработную плату сотрудников</td>
                             <td class="input-info">{{form.salary_taxes}}</td>
-                            <td>-</td>
+                            <td>{{binaries.6}}</td>
                             <td class="td-check"><img src="{% static 'financial_game/img/no.svg' %}"></td>
                         </tr>
                         <tr>
                             <td>Услуги сторонних организаций</td>
                             <td class="input-info">{{form.third_party}}</td>
-                            <td>-</td>
+                            <td>{{binaries.7}}</td>
                             <td class="td-check"><img src="{% static 'financial_game/img/no.svg' %}"></td>
                         </tr>
                         <tr>
                             <td>Расходы на рекламу</td>
                             <td class="input-info">{{form.ads}}</td>
-                            <td>-</td>
+                            <td>{{binaries.8}}</td>
                             <td class="td-check"><img src="{% static 'financial_game/img/no.svg' %}"></td>
                         </tr>
                         <tr>
                             <td>Аренда</td>
                             <td class="input-info">{{form.rent_pay}}</td>
-                            <td>-</td>
+                            <td>{{binaries.9}}</td>
                             <td class="td-check"><img src="{% static 'financial_game/img/no.svg' %}"></td>
                         </tr>
                         <tr>
                             <td>Другие расходы</td>
                             <td class="input-info">{{form.other}}</td>
-                            <td>-</td>
+                            <td>{{binaries.10}}</td>
                             <td class="td-check"><img src="{% static 'financial_game/img/no.svg' %}"></td>
                         </tr>
                     </tbody>
@@ -128,13 +128,13 @@
                         <tr>
                             <td>Общая сумма налогов</td>
                             <td class="input-info">{{form.earning_taxes}}</td>
-                            <td>-</td>
+                            <td>{{binaries.11}}</td>
                             <td class="td-check"><img src="{% static 'financial_game/img/no.svg' %}"></td>
                         </tr>
                         <tr>
                             <td>Финансовый результат</td>
                             <td class="input-info">{{form.fin_res}}</td>
-                            <td>-</td>
+                            <td>{{binaries.12}}</td>
                             <td class="td-check"><img src="{% static 'financial_game/img/no.svg' %}"></td>
                         </tr>
                     </tbody>
@@ -143,7 +143,7 @@
                         <tr>
                             <th>Текущие расходы всего</th>
                             <td class="input-info">{{form.investments}}</td>
-                            <td>-</td>
+                            <td>{{binaries.13}}</td>
                             <td class="td-check"><img src="{% static 'financial_game/img/no.svg' %}"></td>
                         </tr>
                     </thead>
@@ -151,31 +151,31 @@
                         <tr>
                             <td>Закупка оборудования</td> 
                             <td class="input-info">{{form.equip}}</td>
-                            <td>-</td>
+                            <td>{{binaries.14}}</td>
                             <td class="td-check"><img src="{% static 'financial_game/img/no.svg' %}"></td>
                         </tr>
                         <tr>
                             <td>Проведение научных исследований</td>
                             <td class="input-info">{{form.research}}</td>
-                            <td>-</td>
+                            <td>{{binaries.15}}</td>
                             <td class="td-check"><img src="{% static 'financial_game/img/no.svg' %}"></td>
                         </tr>
                         <tr>
                             <td>Приобретение технологий</td>
                             <td class="input-info">{{form.tech}}</td>
-                            <td>-</td>
+                            <td>{{binaries.16}}</td>
                             <td class="td-check"><img src="{% static 'financial_game/img/no.svg' %}"></td>
                         </tr>
                         <tr>
                             <td>Обучение сотрудников</td>
                             <td class="input-info">{{form.education}}</td>
-                            <td>-</td>
+                            <td>{{binaries.17}}</td>
                             <td class="td-check"><img src="{% static 'financial_game/img/no.svg' %}"></td>
                         </tr>
                         <tr>
                             <td>Представительские расходы</td>
                             <td class="input-info">{{form.hospitality}}</td>
-                            <td>-</td>
+                            <td>{{binaries.18}}</td>
                             <td class="td-check"><img src="{% static 'financial_game/img/no.svg' %}"></td>
                         </tr>
                         <tr>
@@ -189,7 +189,7 @@
                         <tr>
                             <th>Финансирование</th>
                             <td class="input-info">{{form.funding}}</td>
-                            <td>-</td>
+                            <td>{{binaries.19}}</td>
                             <td class="td-check"><img src="{% static 'financial_game/img/no.svg' %}"></td>
                         </tr>
                     </thead>
@@ -229,18 +229,18 @@
                         <tr>
                             <td>Денежный поток</td>
                             <td class="input-info">{{form.cash_flow}}</td>
-                            <td>-</td>
+                            <td>{{binaries.20}}</td>
                             <td class="td-check"><img src="{% static 'financial_game/img/no.svg' %}"></td>
                         </tr>
                         <tr>
                             <td>Остаток денежных средств</td>
                             <td class="input-info">{{form.cash_balance_end}}</td>
-                            <td>-</td>
+                            <td>{{binaries.21}}</td>
                             <td class="td-check"><img src="{% static 'financial_game/img/no.svg' %}"></td>
                         </tr>
                     </tbody>
                 </table>
-
+  
             </div>
             
             <div class="expense expense-input-state">
@@ -252,7 +252,6 @@
             </div>
         </div>
 
-        
         <div class=input-table-buttons>
             <div class="checking">
             <ul class="game-table-list ">
