@@ -68,13 +68,14 @@ def update_true_table(user_id):
     true_current_table.current_costs, true_current_table.cost_price, true_current_table.salary_taxes, true_current_table.third_party = 0, 0, 0, 0
     true_current_table.ads, true_current_table.other, true_current_table.earning_taxes, true_current_table.fin_res = 0, 0, 0, 0
     true_current_table.investments, true_current_table.equip, true_current_table.research, true_current_table.tech, true_current_table.education, true_current_table.hospitality = 0, 0, 0, 0, 0, 0
+    true_current_table.save()
 
 #calculating true values for table
 def calc_true_table(green_card, blue_card, user_id):
+    true_current_table = true_table.objects.get(player=user_id)
+
     if true_current_table.next_month_count != 0:
         true_current_table.earnings += true_current_table.next_month_count * true_current_table.next_month_price
-
-    true_current_table = true_table.objects.get(player=user_id)
     if green_card.card_type == 'products':
         true_current_table.count = green_card.count_prod
         true_current_table.price = green_card.price_prod
@@ -288,7 +289,7 @@ def table_input(request):
                 error = 'Форма не валидна'
 
         form = tableForm(instance=current_table)
-        binaries = ['yes.svg' if binaries[i]==1 else 'no.svg' for i in range(len(binaries))]
+        binaries = ["{% static 'financial_game/img/yes.svg' %}" if binaries[i]==1 else "{% static 'financial_game/img/no.svg' %}" for i in range(len(binaries))]
         # green_card = GreenCard(instance=green_card)
         # blue_card = BlueCard(instance=blue_card)
         data = {
