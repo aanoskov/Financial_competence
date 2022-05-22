@@ -2,9 +2,10 @@ import imp
 from django.shortcuts import redirect, render
 from django.http import HttpResponse
 from .forms import userForm, tableForm
-from .models import user, table
+from .models import BlueCard, GreenCard, user, table
 from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.models import User
+from random import randint
 
 # Create your views here.
 def main(request):
@@ -13,6 +14,12 @@ def main(request):
 
 def game(request):
     return render(request,'financial_game/game.html')
+
+def get_random_cards():
+    green_card = GreenCard.objects.all()
+    blue_card = BlueCard.objects.all()
+    green_rand, blue_rand = randint(0, len(green_card)-1), randint(0, len(blue_card)-1)
+    return green_card[green_rand], blue_card[blue_rand]
 
 def nickname(request):
 
@@ -31,7 +38,11 @@ def nickname(request):
                 person_id = request.user.id
                 persons_table=table(player= User.objects.get(id=person_id))
                 persons_table.save()
-                return redirect('table_input')
+
+                # green_card, blue_card = get_random_cards()
+
+                # return render(request, 'financial_game/table_input.html', {'blue_card': blue_card, 'green_card': green_card, 'form': persons_table})
+                return redirect('table_input') # add cards to html
         else:
             error = 'Форма не валидна'
 
@@ -61,6 +72,7 @@ def table_input(request):
         form = tableForm(request.POST,instance=current_table) # take new values of the table from form
         if form.is_valid(): 
             form.save() # save table updates
+            
             #here we need check 
             # if check is ok:
             #   current_table= table.objects.get(player=user_id)
@@ -77,11 +89,14 @@ def table_input(request):
             error = 'Форма не валидна'
 
     form = tableForm(instance=current_table)
+    green_card, blue_card = get_random_cards()
     data = {
+        'green_card': green_card,
+        'blue_card': blue_card,
         'form': form,
         'error': error,
         'month_num':month_num,
         'cash_balance_begin':cash_balance_begin
     }
 
-    return render(request,'financial_game/table-input.html', data)
+    return render(request,'financial_game/table_input.html', data)

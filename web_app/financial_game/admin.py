@@ -38,7 +38,11 @@ class BlueCardAdmin(admin.ModelAdmin):
         (None, {
             'fields' : ('text', 'card_type')
         }),
-        ('Бонус к зарплате', {
+        # ('Бонус к зарплате в процентах', {
+        #     'classes': ('collapse',),
+        #     'fields': ('salary_num',)
+        # }),
+        ('Бонус к зарплате в рублях', {
             'classes': ('collapse',),
             'fields': ('salary_percent',)
         }),

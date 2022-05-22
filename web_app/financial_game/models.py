@@ -6,31 +6,31 @@ class GreenCard(models.Model):
     card_type_choises = [('products', 'Выпуск продукции 1 мес'),
                          ('sale', 'Распродажа'),
                          ('earnings', 'Выручка'),
-                         ('opt_1', 'Оптовый контрак 1 мес'),
-                         ('opt_2', 'Оптовый контрак 2 мес'),
+                         ('opt_1', 'Оптовый контракт 1 мес'),
+                         ('opt_2', 'Оптовый контракт 2 мес'),
                          ('online', 'Онлайн заказы')]
     text = models.CharField('Описание', max_length=250)
     card_type = models.CharField('Тип карты', max_length=15, choices=card_type_choises,)
     # products
-    count_prod = models.IntegerField('Кол-во товара в этом месяце')
-    price_prod = models.IntegerField('Цена 1 товара в этом месяце')
+    count_prod = models.IntegerField('Кол-во товара в этом месяце', default=0)
+    price_prod = models.IntegerField('Цена 1 товара в этом месяце', default=0)
     #sale
-    discount = models.IntegerField('Процент скидки')
+    discount = models.IntegerField('Процент скидки', default=0)
     # earnings
-    earnings = models.IntegerField('Выручка')
-    price_earn = models.IntegerField('Цена 1 товара в этом месяце')
+    earnings = models.IntegerField('Выручка', default=0)
+    price_earn = models.IntegerField('Цена 1 товара в этом месяце', default=0)
     # opt 1 month
-    count_opt = models.IntegerField('Кол-во товара в этом месяце')
-    earnings_opt = models.IntegerField('Выручка')
+    count_opt = models.IntegerField('Кол-во товара в этом месяце', default=0)
+    earnings_opt = models.IntegerField('Выручка', default=0)
     #opt 2 months
-    count_opt_1 = models.IntegerField('Кол-во товара в этом месяце')
-    price_opt_1 = models.IntegerField('Цена 1 товара в этом месяце')
-    count_opt_2 = models.IntegerField('Кол-во товара в следующем месяце')
-    price_opt_2 = models.IntegerField('Цена 1 товара в следующем месяце')
+    count_opt_1 = models.IntegerField('Кол-во товара в этом месяце', default=0)
+    price_opt_1 = models.IntegerField('Цена 1 товара в этом месяце', default=0)
+    count_opt_2 = models.IntegerField('Кол-во товара в следующем месяце', default=0)
+    price_opt_2 = models.IntegerField('Цена 1 товара в следующем месяце', default=0)
     # online
-    count_online = models.IntegerField('Кол-во товара в этом месяце')
-    price_online = models.IntegerField('Цена 1 товара в этом месяце')
-    percents = models.IntegerField('Процент онлайн магазина')
+    count_online = models.IntegerField('Кол-во товара в этом месяце', default=0)
+    price_online = models.IntegerField('Цена 1 товара в этом месяце', default=0)
+    percents = models.IntegerField('Процент онлайн магазина', default=0)
     def __str__(self):
         return str(self.text)
 
@@ -51,20 +51,20 @@ class BlueCard(models.Model):
                          ('hospitality', 'Выставка')]
     text = models.CharField('Описание', max_length=250)
     card_type = models.CharField('Тип карты', max_length=15, choices=card_type_choises)
-    salary_percent = models.PositiveIntegerField('Процент премии сотрудникам', default=10)
-    salary_num = models.PositiveIntegerField('Премия программистам', default=50000)
-    fines = models.PositiveIntegerField('Штраф', default=1000) # or registration
-    online_shop = models.PositiveIntegerField('Цена онлайн-магазина', default=50000)
-    ads_percent = models.PositiveIntegerField('Проценты на SMM', default=2)
-    equip = models.PositiveIntegerField('Цена доп. оборудования', default=30000)
+    salary_percent = models.PositiveIntegerField('Процент премии сотрудникам', default=0)
+    # salary_num = models.PositiveIntegerField('Премия программистам', default=0)
+    fines = models.PositiveIntegerField('Штраф', default=0) # or registration
+    online_shop = models.PositiveIntegerField('Цена онлайн-магазина', default=0)
+    ads_percent = models.PositiveIntegerField('Проценты на SMM', default=0)
+    equip = models.PositiveIntegerField('Цена доп. оборудования', default=0)
     # registration = models.PositiveIntegerField('Цена регистрации компании', default=5000)
-    fired_percent = models.PositiveIntegerField('Процент от оклада сотруднику, выполняющему обязательства другого', default=50)
-    detector_percent = models.PositiveIntegerField('Процент, на кот. выросла цена датчиков', default=15)
-    price_percent = models.PositiveIntegerField('Процент, на кот. выросла цена продукта', default=10)
-    education = models.PositiveIntegerField('Стоимость обучения сотрудника', default=12000)
-    hospitality_1 = models.PositiveIntegerField('Стоимость стенда', default=5000)
-    hospitality_2 = models.PositiveIntegerField('Стоимость флаеров', default=1000)
-    hospitality_3 = models.PositiveIntegerField('Стоимость места на выставке', default=15000)
+    fired_percent = models.PositiveIntegerField('Процент от оклада сотруднику, выполняющему обязательства другого', default=0)
+    detector_percent = models.PositiveIntegerField('Процент, на кот. выросла цена датчиков', default=0)
+    price_percent = models.PositiveIntegerField('Процент, на кот. выросла цена продукта', default=0)
+    education = models.PositiveIntegerField('Стоимость обучения сотрудника', default=0)
+    hospitality_1 = models.PositiveIntegerField('Стоимость стенда', default=0)
+    hospitality_2 = models.PositiveIntegerField('Стоимость флаеров', default=0)
+    hospitality_3 = models.PositiveIntegerField('Стоимость места на выставке', default=0)
     
     def __str__(self):
         return str(self.text)
