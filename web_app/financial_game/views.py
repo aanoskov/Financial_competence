@@ -116,7 +116,7 @@ def calc_true_table(green_card, blue_card, user_id):
         true_current_table.equip += blue_card.equip
         true_current_table.need_in_third_party = False
     elif blue_card.card_type == 'fired':
-        true_current_table.employees -= (1 - blue_card.fired_percent)
+        true_current_table.employees -= (1 - blue_card.fired_percent/100)
         true_current_table.salary = true_current_table.def_salary * true_current_table.employees
     elif blue_card.card_type == 'detector':
         true_current_table.cost_price_per_one_detector = (1 + blue_card.detector_percent/100)
@@ -166,6 +166,7 @@ def table_input(request):
     cash_balance_begin=current_table.cash_balance_begin
     if current_table.month_num > 12:
         #current_table.
+        #current_table.result = (current_table.fin_res_sum - current_table.own_funds_sum)/(current_table.own_funds_sum+1)
         cur_sup.delete()
         return redirect('result')
     else:
@@ -224,6 +225,7 @@ def table_input(request):
                 if current_table.fin_res in range(int(true_current_table.fin_res - 10), int(true_current_table.fin_res + 10)):
                     true_current_table.fin_res = current_table.fin_res
                     binaries[12] = 1
+                    #
                 if current_table.investments in range(int(true_current_table.investments - 10), int(true_current_table.investments + 10)):
                     true_current_table.investments = current_table.investments
                     binaries[13] = 1
@@ -289,7 +291,9 @@ def table_input(request):
                 #   current_table.cash_balance_begin = current_table.cash_balance_end
                 #   return redirect('table_input')
                 # elif we have mistakes,
-                #  return red mistakes
+                #  return red mistakes               
+                current_table.own_funds_sum += current_table.own_funds
+                current_table.fin_res_sum += current_table.fin_res
                 current_table.cash_balance_begin=current_table.cash_balance_end
                 current_table.month_num +=1 #change number of month
                 current_table.save()
@@ -321,9 +325,10 @@ def result(request):
         player = request.user.username
     else:
         user_id = 1
-
+    
     current_table = table.objects.get(player=user_id)
-    player_result =current_table.result
+    curent_table.result = (current_table.fin_res_sum - current_table.own_funds_sum)/(current_table.own_funds_sum+1)
+    player_result =round(curent_table.result,3)
     player_mistakes =current_table.mistakes
     data = {	        
         'player': player,

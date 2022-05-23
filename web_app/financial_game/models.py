@@ -121,6 +121,8 @@ class table(models.Model):
     sponsor_invest = models.FloatField('Инвестиции',default=0)
     cash_flow = models.FloatField('Денежный поток',default=0)
     cash_balance_end = models.FloatField('Остаток денежных средств на конец',default=0)
+    own_funds_sum = models.FloatField('Сумма собственных средств основателей ',default=0)
+    fin_res_sum = models.FloatField('Сумма финансового результата',default=0)
 
     player = models.ForeignKey(User, on_delete=models.CASCADE, default=1)
     result = models.FloatField('Результат игры',default=0)
