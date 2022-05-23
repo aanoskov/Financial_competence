@@ -260,6 +260,13 @@ def table_input(request):
                     binaries[21] = 1
                 if 0 in binaries:
                     #binaries = ["{% static 'financial_game/img/yes.svg' %}" if binaries[i]==1 else "{% static 'financial_game/img/no.svg' %}" for i in range(len(binaries))]
+                    mistakes = 0
+                    for i in range(22):
+                        if binaries[i] == 0:
+                            mistakes +=1  
+                    current_table.mistakes += mistakes  
+                    current_table.save()
+
                     data = {
                         'green_card': cur_sup.green_card_text,
                         'blue_card': cur_sup.blue_card_text,
@@ -317,9 +324,11 @@ def result(request):
 
     current_table = table.objects.get(player=user_id)
     player_result =current_table.result
+    player_mistakes =current_table.mistakes
     data = {	        
         'player': player,
         'result': player_result,
+        'mistakes': player_mistakes,
     }
     return render(request,'financial_game/results.html',data)
 
@@ -332,6 +341,7 @@ def rating(request):
         player['result']=one.result
         user = User.objects.get(id=one.player.id)
         player['username'] = user.username
+        player['mistakes'] = one.mistakes
         rating.append(copy.copy(player))
 
 

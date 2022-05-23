@@ -77,6 +77,7 @@ class user(models.Model):
     name = models.CharField('Имя игрока', max_length=20)
     #game_move = models.OneToOneField(table,on_delete=models.CASCADE)
     result = models.IntegerField('Результат',default=0)
+    mistakes = models.IntegerField('Количество ошибок',default=0)
 
     def __str__(self):
         return str(self.name)
