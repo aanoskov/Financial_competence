@@ -77,6 +77,7 @@ class user(models.Model):
     name = models.CharField('Имя игрока', max_length=20)
     #game_move = models.OneToOneField(table,on_delete=models.CASCADE)
     result = models.IntegerField('Результат',default=0)
+    mistakes = models.IntegerField('Количество ошибок',default=0)
 
     def __str__(self):
         return str(self.name)
@@ -120,6 +121,8 @@ class table(models.Model):
     sponsor_invest = models.FloatField('Инвестиции',default=0)
     cash_flow = models.FloatField('Денежный поток',default=0)
     cash_balance_end = models.FloatField('Остаток денежных средств на конец',default=0)
+    own_funds_sum = models.FloatField('Сумма собственных средств основателей ',default=0)
+    fin_res_sum = models.FloatField('Сумма финансового результата',default=0)
 
     player = models.ForeignKey(User, on_delete=models.CASCADE, default=1)
     result = models.FloatField('Результат игры',default=0)
