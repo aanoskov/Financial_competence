@@ -275,7 +275,7 @@ def table_input(request):
                 true_current_table.cash_flow = (true_current_table.fin_res -
                                 true_current_table.investments +
                                 current_table.funding)
-                true_current_table.cash_balance_end = current_table.cash_flow + current_table.cash_balance_begin
+                true_current_table.cash_balance_end = true_current_table.cash_flow + current_table.cash_balance_begin
                 true_current_table.save()
                 if current_table.cash_flow in range(int(true_current_table.cash_flow - 10), int(true_current_table.cash_flow + 10)):
                     binaries[20] = 1
