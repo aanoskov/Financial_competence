@@ -351,6 +351,7 @@ html {
     color: #FF6500;
     box-shadow: #FF8B2D 7px 2px 4px, #FF8B2D 0 7px 13px -3px,#FF8B2D 0 -3px 0 inset;
     font-size: 70px;
+    
 }
 
 .continue-button:focus {
@@ -712,9 +713,7 @@ html {
 }
 
 .input-table-buttons{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+   
     margin: 0;
     padding: 0;
     overflow-x: hidden;  
@@ -723,14 +722,11 @@ html {
     padding-top: 30px;
     padding-bottom: 0px;
     min-width: 1700px;
-    
     position: relative;
     bottom: 0px;
-}
-.checking{
-    margin-left: 50px;
     
 }
+
 .show-res-button{
     width: 500px;
 }
@@ -797,14 +793,16 @@ html {
 
 
 
-
+.checking{
+    text-align: center;
+}
 
 .rating-name{
 /*    margin-right: 50px;*/
     
     text-align: center;
-    width: 80%;
-    max-width: 80%;
+    width: 65%;
+    max-width: 65%;
     
 }
 
@@ -814,15 +812,20 @@ html {
     background-color: #FFE5AC;
     
 }
+.rating-mistakes{
+    text-align: center;
+    width: 15%;
+    background-color: #FFE5AC;
+}
 
 .rating-table{
     margin-bottom: 0;
     margin-top: 0;
-    max-width: 700px;
+    max-width: 800px;
     font-family: "RobotoFlex-Regular";
     font-size: 35px;
     font-weight: 600;
-    min-width: 700px;
+    min-width: 800px;
 }
 .rating-button{
     margin-top:20px;
@@ -847,19 +850,22 @@ html {
     margin: 0;
     padding: 0;
 }
-.list li {
-    padding-top: 0px;
-    margin: 0;
-    text-align: left;
-    font-size: 25px;
-    padding-bottom: 70px;
-    overflow: hidden;
-    text-decoration: none;
-    text-decoration-style: solid;
-    border: 198px;
-    border-radius: -183px;
-    /* display: inline-flex; */
-    text-decoration: none;
-    box-shadow: #ff8b2d 7px 2px 4px, #ff8b2d 0 7px 13px -3px, #ff8b2d 0 -3px 0 inset;
-    box-sizing: border-box;
+.rule-h1{
+    padding-top: 20px;
+    margin-bottom: -70px;
+    
+}
+.rule-h1 h1{
+    font-size: 90px;
+}
+.rule-list{
+    font-family: "RobotoFlex-Regular";
+    font-size: 29px;
+    padding-left: 45px;
+    padding-right: 45px;
+    word-wrap: break-word;
+    margin-bottom: -30px;
+}
+.rule-list p{
+    text-indent: 30px;
 }
