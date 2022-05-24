@@ -174,7 +174,8 @@ class true_table(models.Model):
     #добавляем счетчик, процент по кредиту
     counterkred = models.IntegerField('счетчик до окончания выплат по кредиту',default=-1)
     funds_refund2 = models.FloatField('Дополнительная переменная, в которой хранится процент',default=0)
-    
+    investflag = models.BooleanField('Флаг привлечения инвестиций',default=False)
+    grants = models.FloatField('Дополнительная переменная, для хранения суммы гранта',default=0)
     # additional fields
     next_month_count = models.IntegerField('Кол-во в след. мес.', default=0)
     next_month_price = models.FloatField('Цена в след. мес.', default=0) 

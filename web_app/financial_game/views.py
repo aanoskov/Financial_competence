@@ -262,10 +262,16 @@ def table_input(request):
                 
                 if true_current_table.counterkred==0:
                     true_current_table.funds_refund=true_current_table.funds_refund2*120
-
                 
+                if (true_current_table.investflag==True):
+                    true_current_table.grants=0
 
-                true_fundings = (current_table.grants +
+                if (true_current_table.investflag==False) and (current_table.grants>0):
+                    true_current_table.investflag=True
+                    true_current_table.grants=current_table.grants
+
+
+                true_fundings = (true_current_table.grants +
                                 current_table.own_funds +
                                 current_table.funds_receipt - 
                                 current_table.funds_refund +
@@ -354,8 +360,8 @@ def result(request):
         user_id = 1
     
     current_table = table.objects.get(player=user_id)
-    curent_table.result = (current_table.fin_res_sum - current_table.own_funds_sum)/(current_table.own_funds_sum+1)
-    player_result =round(curent_table.result,3)
+    current_table.result = (current_table.fin_res_sum - current_table.own_funds_sum)/(current_table.own_funds_sum+1)
+    player_result =round(current_table.result,3)
     player_mistakes =current_table.mistakes
     data = {	        
         'player': player,
