@@ -279,7 +279,7 @@ def table_input(request):
                 true_current_table.save()
                 if current_table.cash_flow in range(int(true_current_table.cash_flow - 10), int(true_current_table.cash_flow + 10)):
                     binaries[20] = 1
-                if (true_current_table.cash_balance_end) > 0:
+                if (true_current_table.cash_balance_end) > 0 and current_table.cash_balance_end in range(int(true_current_table.cash_balance_end - 10), int(true_current_table.cash_balance_end + 10)):
                     binaries[21] = 1
                 if 0 in binaries:
                     #binaries = ["{% static 'financial_game/img/yes.svg' %}" if binaries[i]==1 else "{% static 'financial_game/img/no.svg' %}" for i in range(len(binaries))]
@@ -289,18 +289,28 @@ def table_input(request):
                             mistakes +=1  
                     current_table.mistakes += mistakes  
                     current_table.save()
+                    if current_table.show_res:
+                        data = {
+                            'green_card': cur_sup.green_card_text,
+                            'blue_card': cur_sup.blue_card_text,
+                            'form': form,
+                            'error': error,
+                            'month_num':month_num,
+                            'cash_balance_begin':cash_balance_begin,
+                            'binaries': binaries,
+                            'true_current_table': true_current_table
 
-                    data = {
-                        'green_card': cur_sup.green_card_text,
-                        'blue_card': cur_sup.blue_card_text,
-                        'form': form,
-                        'error': error, 
-                        'month_num':month_num,
-                        'cash_balance_begin':cash_balance_begin,
-                        'binaries': binaries,
-                        'true_current_table': true_current_table
-
-                    }
+                        }
+                    else:
+                        data = {
+                            'green_card': cur_sup.green_card_text,
+                            'blue_card': cur_sup.blue_card_text,
+                            'form': form,
+                            'error': error,
+                            'month_num': month_num,
+                            'cash_balance_begin': cash_balance_begin,
+                            'binaries': binaries,
+                        }
                     return render(request,'financial_game/table_input.html', data)
 
                 

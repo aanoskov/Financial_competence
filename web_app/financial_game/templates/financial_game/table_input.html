@@ -52,7 +52,8 @@
                             <th>Доходы (выручка)</th>
                             <td class="input-info">{{form.earnings}}</td>
                             <td>{{true_current_table.earnings}}</td>
-                            <td class="td-check"><img src="{{binaries.0}}"></td>
+                            <td class="td-check">{%  if binaries.0 == 0 %}<img src="{% static 'financial_game/img/no.svg' %}">
+                            {% else %}<img src="{% static 'financial_game/img/yes.svg' %}">{%endif%}</td>
                         </tr>
 
                     </thead>
@@ -61,14 +62,16 @@
                             <td>Средняя цена  продукта</td>
                             <td class="input-info">{{form.price}}</td>
                             <td>{{true_current_table.price}}</td>
-                            <td class="td-check"><img src="{% static 'financial_game/img/no.svg' %}"></td>
+                            <td class="td-check">{%  if binaries.2 == 0 %}<img src="{% static 'financial_game/img/no.svg' %}">
+                            {% else %}<img src="{% static 'financial_game/img/yes.svg' %}">{%endif%}</td>
 
                         </tr>
                         <tr>
                             <td>Количество продукта</td>
                             <td class="input-info">{{form.count}}</td>
                             <td>{{true_current_table.count}}</td>
-                            <td class="td-check"><img src="{% static 'financial_game/img/no.svg' %}"></td>
+                            <td class="td-check">{%  if binaries.1 == 0 %}<img src="{% static 'financial_game/img/no.svg' %}">
+                            {% else %}<img src="{% static 'financial_game/img/yes.svg' %}">{%endif%}</td>
 
                         </tr>
                     </tbody>
@@ -77,51 +80,59 @@
                             <th>Текущие расходы всего</th>
                             <td class="input-info">{{form.current_costs}}</td>
                             <td>{{true_current_table.current_costs}}</td>
-                            <td class="td-check"><img src="{% static 'financial_game/img/no.svg' %}"></td>
+                            <td class="td-check">{%  if binaries.3 == 0 %}<img src="{% static 'financial_game/img/no.svg' %}">
+                            {% else %}<img src="{% static 'financial_game/img/yes.svg' %}">{%endif%}</td>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Себестоимость продукции</td> 
+                            <td>Себестоимость продукции</td>
                             <td class="input-info">{{form.cost_price}}</td>
                             <td>{{true_current_table.cost_price}}</td>
-                            <td class="td-check"><img src="{% static 'financial_game/img/no.svg' %}"></td>
+                            <td class="td-check">{%  if binaries.4 == 0 %}<img src="{% static 'financial_game/img/no.svg' %}">
+                            {% else %}<img src="{% static 'financial_game/img/yes.svg' %}">{%endif%}</td>
                         </tr>
                         <tr>
                             <td>Заработная плата сотрудников</td>
                             <td class="input-info">{{form.salary}}</td>
                             <td>{{true_current_table.salary}}</td>
-                            <td class="td-check"><img src="{% static 'financial_game/img/no.svg' %}"></td>
+                            <td class="td-check">{%  if binaries.5 == 0 %}<img src="{% static 'financial_game/img/no.svg' %}">
+                            {% else %}<img src="{% static 'financial_game/img/yes.svg' %}">{%endif%}</td>
                         </tr>
                         <tr>
                             <td>Начисления на заработную плату сотрудников</td>
                             <td class="input-info">{{form.salary_taxes}}</td>
                             <td>{{true_current_table.salary_taxes}}</td>
-                            <td class="td-check"><img src="{% static 'financial_game/img/no.svg' %}"></td>
+                            <td class="td-check">{%  if binaries.6 == 0 %}<img src="{% static 'financial_game/img/no.svg' %}">
+                            {% else %}<img src="{% static 'financial_game/img/yes.svg' %}">{%endif%}</td>
                         </tr>
                         <tr>
                             <td>Услуги сторонних организаций</td>
                             <td class="input-info">{{form.third_party}}</td>
                             <td>{{true_current_table.third_party}}</td>
-                            <td class="td-check"><img src="{% static 'financial_game/img/no.svg' %}"></td>
+                            <td class="td-check">{%  if binaries.7 == 0 %}<img src="{% static 'financial_game/img/no.svg' %}">
+                            {% else %}<img src="{% static 'financial_game/img/yes.svg' %}">{%endif%}</td>
                         </tr>
                         <tr>
                             <td>Расходы на рекламу</td>
                             <td class="input-info">{{form.ads}}</td>
                             <td>{{true_current_table.ads}}</td>
-                            <td class="td-check"><img src="{% static 'financial_game/img/no.svg' %}"></td>
+                            <td class="td-check">{%  if binaries.8 == 0 %}<img src="{% static 'financial_game/img/no.svg' %}">
+                            {% else %}<img src="{% static 'financial_game/img/yes.svg' %}">{%endif%}</td>
                         </tr>
                         <tr>
                             <td>Аренда</td>
                             <td class="input-info">{{form.rent_pay}}</td>
                             <td>{{true_current_table.rent_pay}}</td>
-                            <td class="td-check"><img src="{% static 'financial_game/img/no.svg' %}"></td>
+                            <td class="td-check">{%  if binaries.9 == 0 %}<img src="{% static 'financial_game/img/no.svg' %}">
+                            {% else %}<img src="{% static 'financial_game/img/yes.svg' %}">{%endif%}</td>
                         </tr>
                         <tr>
                             <td>Другие расходы</td>
                             <td class="input-info">{{form.other}}</td>
                             <td>{{true_current_table.other}}</td>
-                            <td class="td-check"><img src="{% static 'financial_game/img/no.svg' %}"></td>
+                            <td class="td-check">{%  if binaries.10 == 0 %}<img src="{% static 'financial_game/img/no.svg' %}">
+                            {% else %}<img src="{% static 'financial_game/img/yes.svg' %}">{%endif%}</td>
                         </tr>
                     </tbody>
                     <tbody class="tbody-result">
@@ -129,13 +140,15 @@
                             <td>Общая сумма налогов</td>
                             <td class="input-info">{{form.earning_taxes}}</td>
                             <td>{{true_current_table.earning_taxes}}</td>
-                            <td class="td-check"><img src="{% static 'financial_game/img/no.svg' %}"></td>
+                            <td class="td-check">{%  if binaries.11 == 0 %}<img src="{% static 'financial_game/img/no.svg' %}">
+                            {% else %}<img src="{% static 'financial_game/img/yes.svg' %}">{%endif%}</td>
                         </tr>
                         <tr>
                             <td>Финансовый результат</td>
                             <td class="input-info">{{form.fin_res}}</td>
                             <td>{{true_current_table.fin_res}}</td>
-                            <td class="td-check"><img src="{% static 'financial_game/img/no.svg' %}"></td>
+                            <td class="td-check">{%  if binaries.12 == 0 %}<img src="{% static 'financial_game/img/no.svg' %}">
+                            {% else %}<img src="{% static 'financial_game/img/yes.svg' %}">{%endif%}</td>
                         </tr>
                     </tbody>
 
@@ -144,45 +157,51 @@
                             <th>Текущие расходы всего</th>
                             <td class="input-info">{{form.investments}}</td>
                             <td>{{true_current_table.investments}}</td>
-                            <td class="td-check"><img src="{% static 'financial_game/img/no.svg' %}"></td>
+                            <td class="td-check">{%  if binaries.13 == 0 %}<img src="{% static 'financial_game/img/no.svg' %}">
+                            {% else %}<img src="{% static 'financial_game/img/yes.svg' %}">{%endif%}</td>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Закупка оборудования</td> 
+                            <td>Закупка оборудования</td>
                             <td class="input-info">{{form.equip}}</td>
                             <td>{{true_current_table.equip}}</td>
-                            <td class="td-check"><img src="{% static 'financial_game/img/no.svg' %}"></td>
+                            <td class="td-check">{%  if binaries.14 == 0 %}<img src="{% static 'financial_game/img/no.svg' %}">
+                            {% else %}<img src="{% static 'financial_game/img/yes.svg' %}">{%endif%}</td>
                         </tr>
                         <tr>
                             <td>Проведение научных исследований</td>
                             <td class="input-info">{{form.research}}</td>
                             <td>{{true_current_table.research}}</td>
-                            <td class="td-check"><img src="{% static 'financial_game/img/no.svg' %}"></td>
+                            <td class="td-check">{%  if binaries.15 == 0 %}<img src="{% static 'financial_game/img/no.svg' %}">
+                            {% else %}<img src="{% static 'financial_game/img/yes.svg' %}">{%endif%}</td>
                         </tr>
                         <tr>
                             <td>Приобретение технологий</td>
                             <td class="input-info">{{form.tech}}</td>
                             <td>{{true_current_table.tech}}</td>
-                            <td class="td-check"><img src="{% static 'financial_game/img/no.svg' %}"></td>
+                            <td class="td-check">{%  if binaries.16 == 0 %}<img src="{% static 'financial_game/img/no.svg' %}">
+                            {% else %}<img src="{% static 'financial_game/img/yes.svg' %}">{%endif%}</td>
                         </tr>
                         <tr>
                             <td>Обучение сотрудников</td>
                             <td class="input-info">{{form.education}}</td>
                             <td>{{true_current_table.education}}</td>
-                            <td class="td-check"><img src="{% static 'financial_game/img/no.svg' %}"></td>
+                            <td class="td-check">{%  if binaries.17 == 0 %}<img src="{% static 'financial_game/img/no.svg' %}">
+                            {% else %}<img src="{% static 'financial_game/img/yes.svg' %}">{%endif%}</td>
                         </tr>
                         <tr>
                             <td>Представительские расходы</td>
                             <td class="input-info">{{form.hospitality}}</td>
                             <td>{{true_current_table.hospitality}}</td>
-                            <td class="td-check"><img src="{% static 'financial_game/img/no.svg' %}"></td>
+                            <td class="td-check">{%  if binaries.18 == 0 %}<img src="{% static 'financial_game/img/no.svg' %}">
+                            {% else %}<img src="{% static 'financial_game/img/yes.svg' %}">{%endif%}</td>
                         </tr>
                         <tr>
                             <td>Другие расходы</td>
                             <td class="input-info">{{form.other_invest}}</td>
                             <td>{{true_current_table.other_invest}}</td>
-                            <td class="td-check"><img src="{% static 'financial_game/img/no.svg' %}"></td>
+                            <td class="td-check"></td>
                         </tr>
                     </tbody>
                     <thead>
@@ -190,39 +209,36 @@
                             <th>Финансирование</th>
                             <td class="input-info">{{form.funding}}</td>
                             <td>-</td>
-                            <td class="td-check"><img src="{% static 'financial_game/img/no.svg' %}"></td>
+                            <td class="td-check">{%  if binaries.19 == 0 %}<img src="{% static 'financial_game/img/no.svg' %}">
+                            {% else %}<img src="{% static 'financial_game/img/yes.svg' %}">{%endif%}</td>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Получение грантов</td> 
+                            <td>Получение грантов</td>
                             <td class="input-info">{{form.grants}}</td>
                             <td>-</td>
-                            <td class="td-check"><img src="{% static 'financial_game/img/no.svg' %}"></td>
                         </tr>
                         <tr>
                             <td>Собственные средства основателей</td>
                             <td class="input-info">{{form.own_funds}}</td>
                             <td>-</td>
-                            <td class="td-check"><img src="{% static 'financial_game/img/no.svg' %}"></td>
                         </tr>
                         <tr>
                             <td>Заёмные средства (поступления)</td>
                             <td class="input-info">{{form.funds_receipt}}</td>
                             <td>-</td>
-                            <td class="td-check"><img src="{% static 'financial_game/img/no.svg' %}"></td>
                         </tr>
                         <tr>
                             <td>Заёмные средства (возврат)</td>
                             <td class="input-info">{{form.funds_refund}}</td>
                             <td>{{true_current_table.funds_refund}}</td>
-                            <td class="td-check"><img src="{% static 'financial_game/img/no.svg' %}"></td>
+                            <td class="td-check"><img src="{% static 'financial_game/img/yes.svg' %}"></td>
                         </tr>
                         <tr>
                             <td>Инвестиции</td>
                             <td class="input-info">{{form.sponsor_invest}}</td>
                             <td>-</td>
-                            <td class="td-check"><img src="{% static 'financial_game/img/no.svg' %}"></td>
                         </tr>
                     </tbody>
                     <tbody class="tbody-result">
@@ -230,13 +246,19 @@
                             <td>Денежный поток</td>
                             <td class="input-info">{{form.cash_flow}}</td>
                             <td>{{true_current_table.cash_flow}}</td>
-                            <td class="td-check"><img src="{% static 'financial_game/img/no.svg' %}"></td>
+                            <td class="td-check">{%  if binaries.20 == 0 %}<img src="{% static 'financial_game/img/no.svg' %}">
+                            {% else %}<img src="{% static 'financial_game/img/yes.svg' %}">{%endif%}</td>
                         </tr>
                         <tr>
                             <td>Остаток денежных средств</td>
                             <td class="input-info">{{form.cash_balance_end}}</td>
                             <td>{{true_current_table.cash_balance_end}}</td>
-                            <td class="td-check"><img src="{% static 'financial_game/img/no.svg' %}"></td>
+                            <td class="td-check">{%  if binaries.21 == 0 %}<img src="{% static 'financial_game/img/no.svg' %}">
+                            {% else %}<img src="{% static 'financial_game/img/yes.svg' %}">{%endif%}</td>
+                        </tr>
+                        <tr>
+                            <td>Показать результаты</td>
+                            <td class="input-info">{{form.show_res}}</td>
                         </tr>
                     </tbody>
                 </table>
@@ -258,16 +280,16 @@
                 <li><a href=""><button class="main-menu-button continue-button" type="submit"> Проверить </button></a></li>
             </ul>
             </div> 
-            <div class="show-results">
+            <!--<div class="show-results">
             <ul class="game-table-list " style="visibility: visible;">
                 <li><a href=""><input type="button" value="Показать результаты" class="main-menu-button continue-button show-res-button"></a></li>
             </ul>
-            </div> 
+            </div>
             <div class="continue-game">
             <ul class="game-table-list " style="visibility: visible;">
                 <li><a href=""><input type="button" value="Продолжить" class="main-menu-button continue-button"></a></li>
             </ul>
-            </div> 
+            </div> -->
         
         </div>
     </form>
