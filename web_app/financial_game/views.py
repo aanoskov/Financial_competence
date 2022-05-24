@@ -249,16 +249,19 @@ def table_input(request):
                 
                 
                 if current_table.funds_receipt !=0:
-                    true_current_table.funds_refund = round(current_table.funds_receipt / 120,3)
+                    true_current_table.funds_refund2 = round(current_table.funds_receipt / 120,1)
                     true_current_table.counterkred = 4
 
+                if (true_current_table.counterkred < 4 ) and (true_current_table.counterkred>0):
+                    true_current_table.funds_refund = true_current_table.funds_refund2
 
                 if (true_current_table.counterkred < 0):
+                    true_current_table.funds_refund2=0
                     true_current_table.funds_refund=0
                 
                 
                 if true_current_table.counterkred==0:
-                    true_current_table.funds_refund*=120
+                    true_current_table.funds_refund=true_current_table.funds_refund2*120
 
                 
 

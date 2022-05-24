@@ -173,6 +173,7 @@ class true_table(models.Model):
     funds_refund = models.FloatField('Выплата банку',default=0)
     #добавляем счетчик, процент по кредиту
     counterkred = models.IntegerField('счетчик до окончания выплат по кредиту',default=-1)
+    funds_refund2 = models.FloatField('Дополнительная переменная, в которой хранится процент',default=0)
     
     # additional fields
     next_month_count = models.IntegerField('Кол-во в след. мес.', default=0)
