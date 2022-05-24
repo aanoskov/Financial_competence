@@ -170,7 +170,10 @@ class true_table(models.Model):
     hospitality = models.FloatField('Представительские расходы', default=0)
     cash_balance_end = models.FloatField('Остаток денежных средств на конец',default=0)
     cash_flow = models.FloatField('Денежный поток',default=0)
-
+    funds_refund = models.FloatField('Выплата банку',default=0)
+    #добавляем счетчик, процент по кредиту
+    counterkred = models.IntegerField('счетчик до окончания выплат по кредиту',default=-1)
+    
     # additional fields
     next_month_count = models.IntegerField('Кол-во в след. мес.', default=0)
     next_month_price = models.FloatField('Цена в след. мес.', default=0) 

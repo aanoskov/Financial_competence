@@ -244,6 +244,23 @@ def table_input(request):
                 if current_table.hospitality in range(int(true_current_table.hospitality - 10), int(true_current_table.hospitality + 10)) :
                     true_current_table.hospitality = current_table.hospitality
                     binaries[18] = 1
+                
+                ##
+                
+                
+                if current_table.funds_receipt !=0:
+                    true_current_table.funds_refund = round(current_table.funds_receipt / 120,3)
+                    true_current_table.counterkred = 4
+
+
+                if (true_current_table.counterkred < 0):
+                    true_current_table.funds_refund=0
+                
+                
+                if true_current_table.counterkred==0:
+                    true_current_table.funds_refund*=120
+
+                
 
                 true_fundings = (current_table.grants +
                                 current_table.own_funds +
@@ -256,6 +273,7 @@ def table_input(request):
                                 true_current_table.investments +
                                 current_table.funding)
                 true_current_table.cash_balance_end = current_table.cash_flow + current_table.cash_balance_begin
+                true_current_table.save()
                 if current_table.cash_flow in range(int(true_current_table.cash_flow - 10), int(true_current_table.cash_flow + 10)):
                     binaries[20] = 1
                 if (true_current_table.cash_balance_end) > 0:
@@ -295,6 +313,12 @@ def table_input(request):
                 current_table.own_funds_sum += current_table.own_funds
                 current_table.fin_res_sum += current_table.fin_res
                 current_table.cash_balance_begin=current_table.cash_balance_end
+                #крутим счетчик кредита 
+                
+                
+
+                true_current_table.counterkred -=1
+                true_current_table.save()
                 current_table.month_num +=1 #change number of month
                 current_table.save()
                 return redirect('table_input')
