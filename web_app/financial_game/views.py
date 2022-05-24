@@ -379,3 +379,6 @@ def rating(request):
 
 
     return render(request,'financial_game/rating.html',{'rating':rating})
+
+def rules(request):
+    return render(request,'financial_game/rules.html')
