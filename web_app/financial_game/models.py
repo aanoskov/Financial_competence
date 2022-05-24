@@ -127,7 +127,7 @@ class table(models.Model):
     player = models.ForeignKey(User, on_delete=models.CASCADE, default=1)
     result = models.FloatField('Результат игры',default=0)
     mistakes = models.IntegerField('Ошибки игрока',default=0)
-
+    show_res = models.BooleanField('Показать результат', default = 0)
     def __str__(self):
         return str(self.month_num)
 

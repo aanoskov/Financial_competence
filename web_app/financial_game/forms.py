@@ -15,6 +15,6 @@ class tableForm(ModelForm):
         'current_costs','cost_price','salary','salary_taxes',
         'third_party','ads','rent_pay','other','earning_taxes','fin_res',
         'investments','equip','research','tech','education','hospitality','other_invest',
-        'funding','grants','own_funds','funds_receipt','funds_refund','sponsor_invest','cash_flow','cash_balance_end']
+        'funding','grants','own_funds','funds_receipt','funds_refund','sponsor_invest','cash_flow','cash_balance_end','show_res']
 
     
