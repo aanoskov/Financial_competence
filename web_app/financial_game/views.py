@@ -364,8 +364,8 @@ def result(request):
         user_id = 1
     
     current_table = table.objects.get(player=user_id)
-    curent_table.result = (current_table.fin_res_sum - current_table.own_funds_sum)/(current_table.own_funds_sum+1)
-    player_result =round(curent_table.result,3)
+    current_table.result = (current_table.fin_res_sum - current_table.own_funds_sum)/(current_table.own_funds_sum+1)
+    player_result =round(current_table.result,3)
     player_mistakes =current_table.mistakes
     data = {	        
         'player': player,
