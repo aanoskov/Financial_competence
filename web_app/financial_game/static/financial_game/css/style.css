@@ -847,3 +847,19 @@ html {
     margin: 0;
     padding: 0;
 }
+.list li {
+    padding-top: 0px;
+    margin: 0;
+    text-align: left;
+    font-size: 25px;
+    padding-bottom: 70px;
+    overflow: hidden;
+    text-decoration: none;
+    text-decoration-style: solid;
+    border: 198px;
+    border-radius: -183px;
+    /* display: inline-flex; */
+    text-decoration: none;
+    box-shadow: #ff8b2d 7px 2px 4px, #ff8b2d 0 7px 13px -3px, #ff8b2d 0 -3px 0 inset;
+    box-sizing: border-box;
+}
