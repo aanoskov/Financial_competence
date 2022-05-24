@@ -251,24 +251,30 @@ def table_input(request):
                 if current_table.funds_receipt !=0:
                     true_current_table.funds_refund2 = round(current_table.funds_receipt / 120,1)
                     true_current_table.counterkred = 4
+                    true_current_table.save()
 
                 if (true_current_table.counterkred < 4 ) and (true_current_table.counterkred>0):
                     true_current_table.funds_refund = true_current_table.funds_refund2
+                    true_current_table.save()
 
                 if (true_current_table.counterkred < 0):
                     true_current_table.funds_refund2=0
                     true_current_table.funds_refund=0
+                    true_current_table.save()
                 
                 
                 if true_current_table.counterkred==0:
                     true_current_table.funds_refund=true_current_table.funds_refund2*120
+                    true_current_table.save()
                 
                 if (true_current_table.investflag==True):
                     true_current_table.grants=0
+                    true_current_table.save()
 
                 if (true_current_table.investflag==False) and (current_table.grants>0):
                     true_current_table.investflag=True
                     true_current_table.grants=current_table.grants
+                    true_current_table.save()
 
                 
 
