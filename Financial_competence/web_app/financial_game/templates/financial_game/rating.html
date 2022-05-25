@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta content="true" name="HandheldFriendly"/>
+    <meta content="width" name="MobileOptimized"/>
+    <meta content="yes" name="apple-mobile-web-app-capable"/>
+    <link rel="stylesheet" href="{% static 'financial_game/css/style.css' %}">
+    <title>Тренажёр финансовой грамотности</title>
+	<style>
+   body {
+    width: {{width}}px; /* Минимальная ширина контейнера */
+   }
+  </style>
+  </head>
+
+  <body>
+    <div class="main-header rating-header">
+      <h1> РЕЙТИНГ ИГРОКОВ </h1>
+    </div> 
+    <div class="rating-list">
+      {% for player in rating %}
+            <table class="after-month-table result-table rating-table">
+<!--                <div class="rating-name">{{player.username}}</div> <div class="rating-res">{{player.result}}</div>-->
+                <tbody>
+                    <tr>
+                        <td class="rating-name">{{player.username}}</td>
+                        <td class="rating-res">{{player.result}}</td>
+                        <td class="rating-res">{{player.mistakes}}</td>
+<!--                        {{player.result}}-->
+                    </tr>
+                </tbody>
+            </table>
+      {% endfor %}
+    </div>
+    <div class="main-menu rating-menu">
+      <ul class="main-menu-list rating-menu-list">
+        <li><a href="{% url 'main' %}"><input type="button" value="Главное меню" class="main-menu-button result-button rating-button"></a></li>
+      </ul>
+    </div>  
+  </body>
+</html>
