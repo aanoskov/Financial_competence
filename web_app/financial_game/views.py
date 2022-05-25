@@ -170,8 +170,7 @@ def table_input(request):
         cur_sup.delete()
         return redirect('result')
     else:
-        binaries = [0 for i in range(22)]
-        errors = [0 for i in range(22)]
+        binaries = [0 for i in range(23)]
         if request.method != 'POST':
             green_card, blue_card = get_random_cards()
             update_true_table(user_id)
@@ -243,31 +242,23 @@ def table_input(request):
                 if current_table.hospitality in range(int(true_current_table.hospitality - 10), int(true_current_table.hospitality + 10)) :
                     true_current_table.hospitality = current_table.hospitality
                     binaries[18] = 1
-                
-                ##
-                
-                
+
+                if current_table.funds_refund in range(int(true_current_table.funds_refund - 10), int(true_current_table.funds_refund + 10)):
+                    true_current_table.funds_refund = current_table.funds_refund
+                    binaries[22] = 1
+
                 if current_table.funds_receipt !=0:
-                    true_current_table.funds_refund2 = round(current_table.funds_receipt / 120,1)
+                    true_current_table.funds_refund = round(current_table.funds_receipt / 120, 1)
                     true_current_table.counterkred = 4
-
-                if (true_current_table.counterkred < 4 ) and (true_current_table.counterkred>0):
-                    true_current_table.funds_refund = true_current_table.funds_refund2
-
-                if (true_current_table.counterkred < 0):
-                    true_current_table.funds_refund2=0
+                if true_current_table.counterkred == 0:
+                    true_current_table.funds_refund = true_current_table.funds_refund * 121
+                elif (true_current_table.counterkred < 0):
                     true_current_table.funds_refund=0
-                
-                
-                if true_current_table.counterkred==0:
-                    true_current_table.funds_refund=true_current_table.funds_refund2*120
-
-                
 
                 true_fundings = (current_table.grants +
                                 current_table.own_funds +
                                 current_table.funds_receipt - 
-                                current_table.funds_refund +
+                                true_current_table.funds_refund +
                                 current_table.sponsor_invest)
                 if current_table.funding in range(int(true_fundings - 10), int(true_fundings + 10)) :
                     binaries[19] = 1
@@ -281,11 +272,7 @@ def table_input(request):
                 if (true_current_table.cash_balance_end) > 0 and current_table.cash_balance_end in range(int(true_current_table.cash_balance_end - 10), int(true_current_table.cash_balance_end + 10)):
                     binaries[21] = 1
                 if 0 in binaries:
-                    #binaries = ["{% static 'financial_game/img/yes.svg' %}" if binaries[i]==1 else "{% static 'financial_game/img/no.svg' %}" for i in range(len(binaries))]
-                    mistakes = 0
-                    for i in range(22):
-                        if binaries[i] == 0:
-                            mistakes +=1  
+                    mistakes = binaries.count(0)
                     current_table.mistakes += mistakes  
                     current_table.save()
                     if current_table.show_res:
@@ -311,24 +298,11 @@ def table_input(request):
                             'binaries': binaries,
                         }
                     return render(request,'financial_game/table_input.html', data)
-
-                
-
-                #here we need check 
-                # if check is ok:
-                #   current_table= table.objects.get(player=user_id)
-                #   current_table.month_num +=1
-                #   current_table.cash_balance_begin = current_table.cash_balance_end
-                #   return redirect('table_input')
-                # elif we have mistakes,
-                #  return red mistakes               
+           
                 current_table.own_funds_sum += current_table.own_funds
                 current_table.fin_res_sum += current_table.fin_res
                 current_table.cash_balance_begin=current_table.cash_balance_end
                 #крутим счетчик кредита 
-                
-                
-
                 true_current_table.counterkred -=1
                 true_current_table.save()
                 current_table.month_num +=1 #change number of month
@@ -338,7 +312,7 @@ def table_input(request):
                 error = 'Форма не валидна'
 
         form = tableForm(instance=current_table)
-        binaries = ["{% static 'financial_game/img/yes.svg' %}" if binaries[i]==1 else "{% static 'financial_game/img/no.svg' %}" for i in range(len(binaries))]
+        # binaries = ["{% static 'financial_game/img/yes.svg' %}" if binaries[i]==1 else "{% static 'financial_game/img/no.svg' %}" for i in range(len(binaries))]
         # green_card = GreenCard(instance=green_card)
         # blue_card = BlueCard(instance=blue_card)
         data = {

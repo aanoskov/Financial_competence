@@ -234,7 +234,8 @@
                             <td>Заёмные средства (возврат)</td>
                             <td class="input-info">{{form.funds_refund}}</td>
                             <td>{{true_current_table.funds_refund}}</td>
-                            <td class="td-check"><img src="{% static 'financial_game/img/yes.svg' %}"></td>
+                            <td class="td-check">{%  if binaries.22 == 0 %}<img src="{% static 'financial_game/img/no.svg' %}">
+                                {% else %}<img src="{% static 'financial_game/img/yes.svg' %}">{%endif%}</td></td>
                         </tr>
                         <tr>
                             <td>Инвестиции</td>
