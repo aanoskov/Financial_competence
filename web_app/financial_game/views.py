@@ -246,14 +246,14 @@ def table_input(request):
                 if current_table.funds_refund in range(int(true_current_table.funds_refund - 10), int(true_current_table.funds_refund + 10)):
                     true_current_table.funds_refund = current_table.funds_refund
                     binaries[22] = 1
-
-                if current_table.funds_receipt !=0:
-                    true_current_table.funds_refund = round(current_table.funds_receipt / 120, 1)
-                    true_current_table.counterkred = 4
+ 
                 if true_current_table.counterkred == 0:
                     true_current_table.funds_refund = true_current_table.funds_refund * 121
                 elif (true_current_table.counterkred < 0):
-                    true_current_table.funds_refund=0
+                    true_current_table.funds_refund = 0
+                    if current_table.funds_receipt != 0:
+                        true_current_table.funds_refund = round(current_table.funds_receipt / 120, 1)
+                        true_current_table.counterkred = 4
 
                 true_fundings = (current_table.grants +
                                 current_table.own_funds +
