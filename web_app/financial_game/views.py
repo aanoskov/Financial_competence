@@ -61,7 +61,7 @@ def update_true_table(user_id):
     true_current_table.earnings = 0
     true_current_table.price = 0
     true_current_table.count = 0
-    true_current_table.salary  = true_current_table.def_salary
+    true_current_table.salary  = true_current_table.def_salary * true_current_table.employees
     true_current_table.current_costs, true_current_table.cost_price, true_current_table.salary_taxes, true_current_table.third_party = 0, 0, 0, 0
     true_current_table.ads, true_current_table.other, true_current_table.earning_taxes, true_current_table.fin_res = 0, 0, 0, 0
     true_current_table.investments, true_current_table.equip, true_current_table.research, true_current_table.tech, true_current_table.education, true_current_table.hospitality = 0, 0, 0, 0, 0, 0
