@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta content="true" name="HandheldFriendly"/>
+    <meta content="width" name="MobileOptimized"/>
+    <meta content="yes" name="apple-mobile-web-app-capable"/>
+    <link rel="stylesheet" href="{% static 'financial_game/css/style.css' %}">
+    <title>Тренажёр финансовой грамотности</title>
+	<style>
+   body {
+    width: {{width}}px; /* Минимальная ширина контейнера */
+   }
+  </style>
+  </head>
+
+  <body>
+    <div class="main-header">
+      <h3 > тренажёр </h3>
+      <h1> ФИНАНСОВАЯ ГРАМОТНОСТЬ </h1>
+    </div> 
+    <form method="post">
+      {% csrf_token %}
+      <div class="form">
+        
+        <input type="text" class="input-name" autocomplete="off" id="name" name="name" required>
+        <label for="text" class="label-name">
+            <span class="content-name">
+              Введите имя
+            </span>
+        </label>
+        
+    </div>
+    <div class="name-error">
+        <span>{{ error }}</span>
+    </div>
+    <div class="game-table">
+      <ul class="game-table-list ">
+        <li> <button class="main-menu-button continue-button" type="submit"> Продолжить </button></li>
+      </ul>
+    </div>
+
+    </form>
+
+
+    
+
+
+  </body>
+</html>
