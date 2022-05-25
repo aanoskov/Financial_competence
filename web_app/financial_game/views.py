@@ -189,7 +189,7 @@ def table_input(request):
                 if current_table.earnings in range(int(true_current_table.earnings - 10), int(true_current_table.earnings + 10)):
                     true_current_table.earnings = current_table.earnings
                     binaries[0] = 1
-                if current_table.count in range(int(true_current_table.count - 10), int(true_current_table.count + 10)):
+                if current_table.count ==int(true_current_table.count):
                     true_current_table.count = current_table.count
                     binaries[1] = 1
                 if current_table.price in range(int(true_current_table.price - 10), int(true_current_table.price + 10)):
