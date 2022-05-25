@@ -8,7 +8,9 @@ from django.contrib.auth.models import User
 from random import randint
 from numpy import append
 import copy
-
+from win32api import GetSystemMetrics
+width =GetSystemMetrics(0)
+height =GetSystemMetrics(1)
 # Create your views here.
 def main(request):
     data= {'width': width} 
