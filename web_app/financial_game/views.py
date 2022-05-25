@@ -11,7 +11,8 @@ import copy
 
 # Create your views here.
 def main(request):
-    return render(request,'financial_game/main.html')
+    data= {'width': width} 
+    return render(request,'financial_game/main.html',data)
     #return HttpResponse("<h4>МЫ ТУТ</h4>")
 
 def get_random_cards():
@@ -52,7 +53,8 @@ def nickname(request):
     form = userForm()
     data = {
         'form': form,
-        'error': error
+        'error': error,
+        'width': width
     }
     return render(request,'financial_game/nickname.html', data)
 
@@ -284,7 +286,8 @@ def table_input(request):
                             'month_num':month_num,
                             'cash_balance_begin':cash_balance_begin,
                             'binaries': binaries,
-                            'true_current_table': true_current_table
+                            'true_current_table': true_current_table,
+                            'width': width
 
                         }
                     else:
@@ -296,6 +299,7 @@ def table_input(request):
                             'month_num': month_num,
                             'cash_balance_begin': cash_balance_begin,
                             'binaries': binaries,
+                            'width': width
                         }
                     return render(request,'financial_game/table_input.html', data)
            
@@ -323,6 +327,7 @@ def table_input(request):
             'month_num':month_num,
             'cash_balance_begin':cash_balance_begin,
             'binaries': binaries,
+            'width': width
         }
 
     return render(request,'financial_game/table_input.html', data)
@@ -344,6 +349,7 @@ def result(request):
         'player': player,
         'result': player_result,
         'mistakes': player_mistakes,
+        'width': width
     }
     return render(request,'financial_game/results.html',data)
 
@@ -361,7 +367,7 @@ def rating(request):
 
 
 
-    return render(request,'financial_game/rating.html',{'rating':rating})
+    return render(request,'financial_game/rating.html',{'rating':rating,'width': width})
 
 def rules(request):
-    return render(request,'financial_game/rules.html')
+    return render(request,'financial_game/rules.html',{'width': width})
