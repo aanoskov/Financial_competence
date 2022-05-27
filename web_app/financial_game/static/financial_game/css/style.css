@@ -868,3 +868,10 @@ html {
 .rule-list p{
     text-indent: 30px;
 }
+.main-menu-head{
+    margin-top: -100px;
+    margin-bottom: -20px;
+}
+.mml-fix li{
+    margin-bottom: -20px;
+}
